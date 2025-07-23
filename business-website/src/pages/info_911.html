@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info 911 - A Paramedic's Safety Guide - Vital Signs Safety OKC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F2F2F2;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .info-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printable-cards, #printable-cards * {
+                visibility: visible;
+            }
+            #printable-cards {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+            .info-card {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+    <div class="container mx-auto max-w-5xl p-4 sm:p-8">
+
+        <header class="text-center mb-12 no-print">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#003F5C]">Info 911</h1>
+            <p class="text-xl md:text-2xl text-[#366E8A] mt-2">A Paramedic's Quick-Reference Safety Guide for Parents</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section class="bg-white rounded-lg shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-[#003F5C] text-center no-print">Common Childhood Emergencies</h2>
+                <p class="mt-4 text-lg text-gray-700 max-w-3xl mx-auto text-center no-print">Knowledge and prevention are the cornerstones of effective home safety. While our focus remains on preventing emergencies, being prepared with expert information can make all the difference in a critical moment. This guide combines our paramedic experience with practical safety knowledge every parent should have.</p>
+                
+                <div id="printable-cards" class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <div class="info-card bg-gray-50 rounded-lg p-6 border-l-4 border-[#7CB5D3]">
+                        <h3 class="text-2xl font-bold text-[#003F5C] flex items-center"><span class="text-3xl mr-3">&#129521;</span> Choking</h3>
+                        <p class="mt-3 text-gray-600">For infants (under 1), use back blows and chest thrusts. For children (over 1), perform abdominal thrusts (Heimlich maneuver). Never perform a blind finger sweep.</p>
+                        <div class="mt-4 bg-[#C1E1F4]/50 p-3 rounded-lg">
+                            <h4 class="font-bold text-[#366E8A]">Paramedic's Note:</h4>
+                            <p class="text-sm text-gray-700">The most dangerous choking hazards aren't just small toys; they're often food. Grapes and hot dogs should be cut lengthwise into quarters. A quiet child is a major red flag—if they can't cough, cry, or speak, they are in trouble. Act immediately.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-gray-50 rounded-lg p-6 border-l-4 border-[#7CB5D3]">
+                        <h3 class="text-2xl font-bold text-[#003F5C] flex items-center"><span class="text-3xl mr-3">&#128167;</span> Minor Burns</h3>
+                        <p class="mt-3 text-gray-600">Immediately run cool (not cold) water over the burn for 10-20 minutes. Do not use ice, butter, or ointments. Cover loosely with a sterile, non-stick bandage.</p>
+                        <div class="mt-4 bg-[#C1E1F4]/50 p-3 rounded-lg">
+                            <h4 class="font-bold text-[#366E8A]">Paramedic's Note:</h4>
+                            <p class="text-sm text-gray-700">Most pediatric burns I've treated are scalds from hot liquids like coffee or soup. The burn continues to damage skin even after the source is removed. The cool water is the most critical step to stop the damage. Seek medical attention for any burn larger than a quarter, or any burn on the hands, feet, face, or genitals.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-gray-50 rounded-lg p-6 border-l-4 border-[#7CB5D3]">
+                        <h3 class="text-2xl font-bold text-[#003F5C] flex items-center"><span class="text-3xl mr-3">&#128138;</span> Poisoning</h3>
+                        <p class="mt-3 text-gray-600">If you suspect your child has ingested something toxic, call the Poison Control Hotline immediately: <span class="font-bold">1-800-222-1222</span>. Do not induce vomiting unless instructed to do so.</p>
+                        <div class="mt-4 bg-[#C1E1F4]/50 p-3 rounded-lg">
+                            <h4 class="font-bold text-[#366E8A]">Paramedic's Note:</h4>
+                            <p class="text-sm text-gray-700">Have the product container with you when you call. The most common poisonings I've seen are from everyday items: medications (especially grandparents'), cleaning supplies, and button batteries. A button battery is a true emergency—if swallowed, go to the ER immediately.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-gray-50 rounded-lg p-6 border-l-4 border-[#7CB5D3]">
+                        <h3 class="text-2xl font-bold text-[#003F5C] flex items-center"><span class="text-3xl mr-3">&#129529;</span> Head Bumps & Falls</h3>
+                        <p class="mt-3 text-gray-600">For minor bumps, apply a cold pack for 20 minutes. Monitor the child closely. Seek immediate medical care for loss of consciousness, persistent vomiting, confusion, or a fall from a significant height (twice their body height).</p>
+                        <div class="mt-4 bg-[#C1E1F4]/50 p-3 rounded-lg">
+                            <h4 class="font-bold text-[#366E8A]">Paramedic's Note:</h4>
+                            <p class="text-sm text-gray-700">It's not the size of the bump on the outside, but how the child acts afterward that matters most. A child who cries immediately, is easily consoled, and returns to normal activity is usually fine. A child who becomes unusually sleepy, irritable, or "just isn't acting right" needs to be seen by a doctor.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-gray-50 rounded-lg p-6 border-l-4 border-[#7CB5D3]">
+                        <h3 class="text-2xl font-bold text-[#003F5C] flex items-center"><span class="text-3xl mr-3">&#128704;</span> Drowning</h3>
+                        <p class="mt-3 text-gray-600">For any water incident, get the child out of the water immediately. If they are not breathing, start CPR. Have someone call 911. Drowning is silent and can happen in seconds.</p>
+                        <div class="mt-4 bg-[#C1E1F4]/50 p-3 rounded-lg">
+                            <h4 class="font-bold text-[#366E8A]">Paramedic's Note:</h4>
+                            <p class="text-sm text-gray-700">The most lethal risk for toddlers is drowning, and it's not just in pools. Bathtubs, buckets, and toilets are major hazards. Constant, within-arm's-reach supervision is the only layer of protection that is 100% effective. Any child who has been submerged should be evaluated by a doctor, even if they seem fine.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-gray-50 rounded-lg p-6 border-l-4 border-[#7CB5D3]">
+                        <h3 class="text-2xl font-bold text-[#003F5C] flex items-center"><span class="text-3xl mr-3">&#128567;</span> Suffocation</h3>
+                        <p class="mt-3 text-gray-600">The leading cause of fatal injury for infants. Ensure the crib is completely empty: no blankets, no bumpers, no pillows, no toys. Place baby on their back to sleep.</p>
+                        <div class="mt-4 bg-[#C1E1F4]/50 p-3 rounded-lg">
+                            <h4 class="font-bold text-[#366E8A]">Paramedic's Note:</h4>
+                            <p class="text-sm text-gray-700">Infants lack the neck strength to move their head if their airway becomes blocked by a soft object. The "Bare is Best" rule for cribs is a critical life-saving measure. Also be aware of strangulation risks from window blind cords and baby monitor cords placed too close to the crib.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10 text-center no-print">
+                    <button id="print-button" class="bg-[#366E8A] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-[#003F5C] transition-colors">
+                        🖨️ Print Safety Cards
+                    </button>
+                </div>
+            </section>
+
+            <section class="bg-[#003F5C] text-white rounded-lg shadow-xl p-8 text-center no-print">
+                <h2 class="text-3xl font-bold">This Guide Helps You React. Our Service Helps You Prevent.</h2>
+                <p class="mt-4 text-lg max-w-3xl mx-auto text-gray-200">Knowing how to respond to an emergency is critical. But preventing one from ever happening is the ultimate peace of mind. Our interactive guide shows you the top risks for your child's specific age group.</p>
+                <div class="mt-6">
+                    <a href="hazards.html" class="inline-block bg-white text-[#003F5C] font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-200 transition-colors">Top Hazards by ages
+                    </a>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 py-6 border-t border-[#C1E1F4] no-print">
+            <p class="text-sm text-gray-600">© 2025 Vital Signs Safety OKC, L.L.C. | Serving the Greater Oklahoma City Area</p>
+            <a href="index.html" class="text-sm text-[#366E8A] hover:underline">Return to Homepage</a>
+        </footer>
+
+    </div>
+    <script>
+        document.getElementById('print-button').addEventListener('click', function() {
+            window.print();
+        });
+    </script>
+</body>
+</html>
