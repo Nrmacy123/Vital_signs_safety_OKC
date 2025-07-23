@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Signs Safety OKC - Top 5 Home Hazards by Age</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F2F2F2;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 250px;
+            width: 100%;
+            max-width: 250px;
+        }
+        .nav-btn {
+            transition: all 0.3s ease;
+        }
+        .nav-btn.active {
+            background-color: #003F5C !important;
+            color: #FFFFFF !important;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #003F5C;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+    <!-- Chosen Palette: Brilliant Blues (#003F5C, #366E8A, #7CB5D3, #C1E1F4) -->
+    <!-- Application Structure Plan: The application is structured as a task-oriented interactive guide. The primary information architecture is based on user selection of a child's age group. A top-level navigation allows users to immediately filter the content to what is most relevant to them (0-12 Months, 1-3 Years, 3-5 Years). This user-driven approach is superior to a static list as it provides instant personalization. The main content area dynamically updates to display the top 5 hazards for the selected age, each presented in a clear "card" format. A dynamic chart provides a high-level summary of the primary threat, changing with the user's selection to reinforce the key takeaway for that age group. This structure is designed for maximum clarity, relevance, and user engagement. -->
+    <!-- Visualization & Content Choices: 1. Report Info: Overall leading causes of fatal/non-fatal injuries by age. Goal: Inform/Compare. Viz/Presentation Method: Interactive Donut Chart (Chart.js/Canvas) that updates on age selection. Interaction: Chart data and labels change when a user clicks an age-group button. Justification: Visually reinforces the single most critical threat for each age group in a simple, high-impact format. 2. Report Info: Top 5 specific hazards for each age group. Goal: Organize/Inform. Viz/Presentation Method: Styled HTML/CSS cards with Unicode icons. Interaction: Cards are dynamically displayed based on the selected age group. Justification: This "card" format breaks down complex information into digestible chunks, functioning like a high-quality brochure. Unicode icons are used instead of SVG for visual cues. 3. Report Info: Detailed descriptions of each hazard. Goal: Inform. Viz/Presentation Method: Text blocks within each card. Interaction: Displayed/hidden based on age selection. Justification: Provides necessary context and detail without overwhelming the user initially. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <div class="container mx-auto max-w-4xl p-4 sm:p-8">
+
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#003F5C]">Vital Signs Safety OKC</h1>
+            <p class="text-lg text-gray-600 mt-2">A Paramedic's Guide to the Top 5 Home Hazards by Age</p>
+        </header>
+
+        <nav class="flex justify-center space-x-2 sm:space-x-4 mb-8 p-2 bg-[#C1E1F4] rounded-full">
+            <button id="btn-infant" class="nav-btn active text-sm sm:text-base font-semibold text-[#003F5C] bg-white/50 py-2 px-4 rounded-full" data-age="infant">0–12 Months</button>
+            <button id="btn-toddler" class="nav-btn text-sm sm:text-base font-semibold text-[#003F5C] bg-white/50 py-2 px-4 rounded-full" data-age="toddler">1–3 Years</button>
+            <button id="btn-preschooler" class="nav-btn text-sm sm:text-base font-semibold text-[#003F5C] bg-white/50 py-2 px-4 rounded-full" data-age="preschooler">3–5 Years</button>
+        </nav>
+
+        <main id="content-area">
+            <section id="age-group-overview" class="mb-8 p-6 bg-white rounded-lg shadow-md">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                    <div class="md:col-span-2">
+                        <h2 id="overview-title" class="text-2xl font-bold text-[#003F5C]">The Dependent Infant (0–12 Months)</h2>
+                        <p id="overview-text" class="mt-2 text-gray-700">During the first year, an infant's safety depends entirely on the environment created by caregivers. Lacking mobility, the most severe hazards are often silent and related to their immediate surroundings, especially their sleep space.</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 id="chart-title" class="text-lg font-semibold text-gray-800">Leading Cause of Fatal Injury</h3>
+                        <div class="chart-container">
+                            <canvas id="threatChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div id="hazards-container" class="space-y-6">
+            </div>
+        </main>
+        
+        <section id="gemini-feature" class="mt-12 p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold text-center text-[#003F5C]">Ask a Paramedic: Get Instant Safety Scenarios ✨</h3>
+            <p class="mt-4 text-center text-gray-700 max-w-2xl mx-auto">Curious about a specific area in your home? Enter a location (e.g., "kitchen," "backyard," "grandma's house") to get an instant, AI-powered safety scenario from a paramedic's perspective, tailored to the selected age group.</p>
+            <div class="mt-6 max-w-lg mx-auto flex flex-col sm:flex-row gap-2">
+                <input type="text" id="scenario-input" class="flex-grow w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7CB5D3] focus:outline-none" placeholder="Enter a household area...">
+                <button id="generate-scenario-btn" class="w-full sm:w-auto bg-[#003F5C] text-white font-bold py-2 px-6 rounded-lg hover:bg-[#366E8A] transition-colors">Generate Scenario</button>
+            </div>
+            <div id="scenario-output" class="mt-6 max-w-2xl mx-auto">
+                <div id="scenario-loader" class="hidden justify-center items-center">
+                    <div class="loader"></div>
+                </div>
+                <div id="scenario-result" class="hidden bg-[#C1E1F4]/50 p-4 rounded-lg"></div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 py-6 border-t border-[#C1E1F4]">
+            <p class="font-bold text-[#003F5C]">Vital Signs Safety OKC, L.L.C.</p>
+            <p class="text-sm text-gray-600">Protecting what's most vital.</p>
+            <p class="text-sm text-gray-600 mt-2">This guide is for informational purposes. For a comprehensive, in-home assessment, contact us.</p>
+            <p class="text-sm font-semibold text-gray-800 mt-1">405-999-8448 | vitalsignssafetyokc.com</p>
+        </footer>
+
+    </div>
+
+    <script>
+        let currentAgeGroup = 'infant';
+
+        const hazardData = {
+            infant: {
+                title: "The Dependent Infant (0–12 Months)",
+                description: "During the first year, an infant's safety depends entirely on the environment created by caregivers. Lacking mobility, the most severe hazards are often silent and related to their immediate surroundings, especially their sleep space.",
+                chartData: {
+                    labels: ['Suffocation', 'Other Injuries'], data: [819, 1200], colors: ['#003F5C', '#7CB5D3'], title: 'Suffocation'
+                },
+                hazards: [
+                    { rank: 1, icon: '🛌', title: 'Suffocation & Strangulation', description: 'The leading cause of fatal injury for infants, primarily due to unsafe sleep environments (soft bedding, co-sleeping) and strangulation hazards like window blind cords.' },
+                    { rank: 2, icon: '📉', title: 'Falls', description: 'The leading cause of non-fatal injury. Infants can fall from elevated surfaces like changing tables and beds, or while being carried on stairs.' },
+                    { rank: 3, icon: '🔥', title: 'Burns', description: 'Infants have thin skin, making them highly susceptible to severe scalds from hot tap water, spilled beverages, or steam from microwaved foods.' },
+                    { rank: 4, icon: '😮', title: 'Choking', description: 'A high fatality risk due to an infant\'s instinct to explore with their mouth combined with an undeveloped gag reflex. Small toy parts and improperly prepared food are key risks.' },
+                    { rank: 5, icon: '�', title: 'Drowning', description: 'Can occur in as little as one inch of water, with the bathtub being the most common location. Constant, hands-on supervision is the only prevention.' }
+                ]
+            },
+            toddler: {
+                title: "The Mobile Toddler (1–3 Years)",
+                description: "Newfound mobility (walking, climbing) combined with a lack of risk awareness makes this a period of high danger. The toddler becomes an active explorer, testing the safety of their environment.",
+                chartData: {
+                    labels: ['Drowning', 'Other Injuries'], data: [1000, 1500], colors: ['#003F5C', '#7CB5D3'], title: 'Drowning'
+                },
+                hazards: [
+                    { rank: 1, icon: '🌊', title: 'Drowning', description: 'The #1 cause of fatal injury for this age group. Residential swimming pools are the most common site, often due to brief lapses in supervision and inadequate fencing.' },
+                    { rank: 2, icon: '📉', title: 'Falls', description: 'The leading cause of non-fatal injury. Severe falls occur from stairs, windows, and unsecured furniture (tip-overs), which can be fatal.' },
+                    { rank: 3, icon: '💊', title: 'Poisoning', description: 'This is the highest-risk period for poisoning in a person\'s life. Toddlers open cabinets and taste everything, making cleaners, medications, and button batteries extreme hazards.' },
+                    { rank: 4, icon: '🔥', title: 'Burns', description: 'Toddlers can now reach stovetops and pull on pot handles or appliance cords, leading to devastating scalds from hot liquids and foods.' },
+                    { rank: 5, icon: '🌭', title: 'Choking', description: 'Remains a leading cause of death. Toddlers lack molars for proper grinding and are easily distracted while eating. High-risk foods include hot dogs, grapes, and nuts.' }
+                ]
+            },
+            preschooler: {
+                title: "The Curious Preschooler (3–5 Years)",
+                description: "Physical abilities are advanced, but the understanding of consequences is not. This stage is characterized by independent risk-taking and mimicking adult behaviors, creating new, complex hazards.",
+                chartData: {
+                    labels: ['Falls', 'Other Injuries'], data: [2500, 2000], colors: ['#003F5C', '#7CB5D3'], title: 'Falls'
+                },
+                hazards: [
+                    { rank: 1, icon: '📉', title: 'Falls', description: 'Remain the #1 cause of non-fatal injury. As preschoolers climb higher and run faster, falls from playground equipment, windows, and furniture result in more severe injuries like fractures.' },
+                    { rank: 2, icon: '🌊', title: 'Drowning', description: 'Still a leading cause of fatal injury for ages 1-4. Basic swimming lessons do not make a child "drown-proof." Layers of protection around pools are still critical.' },
+                    { rank: 3, icon: '🔥', title: 'Burns & Fire', description: 'Curiosity can lead to fire play with matches and lighters. Flame burns surpass scalds as the leading cause of burn injury for children over five, and the behavior starts here.' },
+                    { rank: 4, icon: '💊', title: 'Poisoning', description: 'The risk remains high as preschoolers become better at defeating child-resistant caps and accessing medications or cleaners in less-secure locations like a purse or visitor\'s bag.' },
+                    { rank: 5, icon: '✂️', title: 'Cuts & Struck-by Injuries', description: 'A high volume of ER visits result from collisions with furniture and gaining access to sharp "adult" tools like knives and scissors.' }
+                ]
+            }
+        };
+
+        let threatChart;
+
+        const createHazardCard = (hazard) => `
+            <div class="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
+                <div class="text-4xl">${hazard.icon}</div>
+                <div>
+                    <h4 class="text-xl font-bold text-[#003F5C]">${hazard.rank}. ${hazard.title}</h4>
+                    <p class="mt-1 text-gray-600">${hazard.description}</p>
+                </div>
+            </div>
+        `;
+
+        const updateContent = (ageGroup) => {
+            currentAgeGroup = ageGroup;
+            const data = hazardData[ageGroup];
+            document.getElementById('overview-title').textContent = data.title;
+            document.getElementById('overview-text').textContent = data.description;
+            document.getElementById('hazards-container').innerHTML = data.hazards.map(createHazardCard).join('');
+            updateChart(data.chartData);
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${ageGroup}`).classList.add('active');
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) return label.join(' ');
+            return label;
+        };
+
+        const initChart = () => {
+            const ctx = document.getElementById('threatChart').getContext('2d');
+            threatChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: { labels: [], datasets: [{ data: [], backgroundColor: [], borderColor: '#F2F2F2', borderWidth: 4, hoverOffset: 4 }] },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false }, tooltip: { callbacks: { title: tooltipTitleCallback, label: (c) => c.label ? ` ${c.label}` : '' } } }
+                }
+            });
+        };
+
+        const updateChart = (chartData) => {
+            threatChart.data.labels = chartData.labels;
+            threatChart.data.datasets[0].data = chartData.data;
+            threatChart.data.datasets[0].backgroundColor = chartData.colors;
+            const titleEl = document.getElementById('chart-title');
+            if (chartData.title === 'Suffocation' || chartData.title === 'Drowning') {
+                titleEl.textContent = `Leading Cause of Fatal Injury: ${chartData.title}`;
+            } else {
+                titleEl.textContent = `Leading Cause of Non-Fatal Injury: ${chartData.title}`;
+            }
+            threatChart.update();
+        };
+
+        const handleScenarioGeneration = async () => {
+            const input = document.getElementById('scenario-input');
+            const location = input.value.trim();
+            if (!location) {
+                alert('Please enter a household area.');
+                return;
+            }
+
+            const loader = document.getElementById('scenario-loader');
+            const resultDiv = document.getElementById('scenario-result');
+            const generateBtn = document.getElementById('generate-scenario-btn');
+
+            loader.style.display = 'flex';
+            resultDiv.style.display = 'none';
+            generateBtn.disabled = true;
+            generateBtn.textContent = 'Generating...';
+            
+            const ageMap = {
+                infant: "0-12 months old",
+                toddler: "1-3 years old",
+                preschooler: "3-5 years old"
+            };
+            const ageText = ageMap[currentAgeGroup];
+
+            const prompt = `You are a child safety expert with a paramedic background. Based on the top risks for a child who is ${ageText}, describe a realistic, detailed safety hazard scenario that could happen in a typical family's ${location}. In the first paragraph, describe the scenario. In the second paragraph, explain the hidden dangers from a paramedic's perspective. In the third paragraph, provide a clear, actionable prevention tip. Keep the tone reassuring and expert. Format the response with HTML paragraphs.`;
+            
+            try {
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    resultDiv.innerHTML = text;
+                } else {
+                    resultDiv.innerHTML = "<p>Sorry, I couldn't generate a scenario right now. Please try again.</p>";
+                }
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                resultDiv.innerHTML = `<p>An error occurred: ${error.message}. Please try again later.</p>`;
+            } finally {
+                loader.style.display = 'none';
+                resultDiv.style.display = 'block';
+                generateBtn.disabled = false;
+                generateBtn.textContent = 'Generate Scenario';
+                input.value = '';
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initChart();
+            updateContent('infant');
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => updateContent(e.target.dataset.age));
+            });
+            document.getElementById('generate-scenario-btn').addEventListener('click', handleScenarioGeneration);
+        });
+    </script>
+</body>
+</html>
+�

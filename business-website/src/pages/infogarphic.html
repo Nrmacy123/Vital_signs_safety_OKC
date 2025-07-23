@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Signs Safety OKC - A Paramedic's Perspective on Child Safety</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            width: 100%;
+            max-width: 600px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#F2F2F2]">
+    <!-- Chosen Palette: Brilliant Blues (#003F5C, #366E8A, #7CB5D3, #C1E1F4) -->
+    <!-- Application Structure Plan: The SPA is designed as a narrative journey for a concerned parent. It starts with a high-impact hook (the problem), introduces the unique solution (paramedic expertise), builds credibility with core value propositions, visualizes the tangible risks identified (the 'what'), explains the simple process (the 'how'), shows the emotional outcome (the transformation), and ends with a clear call to action. This thematic, single-page scroll structure is ideal for storytelling and easy consumption on any device. -->
+    <!-- Visualization & Content Choices: 1. Key Statistic -> Goal: Inform -> Viz: Single Big Number (HTML/CSS) -> Justification: Immediately grabs attention and establishes the stakes. 2. Core Differentiators -> Goal: Organize -> Viz: 3-Column Layout with Unicode Icons -> Justification: Breaks down the 'why us' into three memorable, digestible pillars. 3. Hidden Hazards -> Goal: Compare/Organize -> Viz: Horizontal Bar Chart (Chart.js/Canvas) -> Justification: Visually represents the categories of risks covered, making the comprehensive nature of the audit tangible and impressive. 4. Process -> Goal: Organize -> Viz: 3-Step Flow Diagram (HTML/CSS) -> Justification: Simplifies the client journey, making the service feel approachable and non-intimidating. 5. Outcome/Benefit -> Goal: Inform/Compare -> Viz: Doughnut Chart (Chart.js/Canvas) -> Justification: Shows how the service components combine to create the complete 'Peace of Mind' solution, reinforcing the final benefit. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <main class="container mx-auto max-w-5xl p-4 sm:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#003F5C]">Vital Signs Safety OKC</h1>
+            <h2 class="text-xl md:text-2xl text-[#366E8A] mt-2">Protecting what's most vital.</h2>
+        </header>
+
+        <div class="space-y-12">
+
+            <section class="bg-white rounded-lg shadow-xl p-6 text-center">
+                <h3 class="text-2xl font-bold text-[#003F5C]">A Paramedic's Perspective on Child Safety</h3>
+                <p class="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">Our mission is to handle the vital safety concerns at home so you can focus on what’s most important: your family. With almost a decade of paramedic expertise, we identify and mitigate the hidden hazards standard proofing often overlooks.</p>
+                <div class="mt-8 bg-[#C1E1F4] rounded-lg p-6 max-w-md mx-auto">
+                    <p class="text-6xl font-bold text-[#003F5C]">2,000+</p>
+                    <p class="text-lg text-[#003F5C] mt-2">Children in the U.S. die from an injury in the home each year. Our mission is to prevent these tragedies.</p>
+                    <p class="text-xs text-gray-600 mt-2">(Source: Centers for Disease Control and Prevention)</p>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-xl p-6">
+                <h3 class="text-2xl font-bold text-center text-[#003F5C]">Our Commitment to Your Family's Safety</h3>
+                <p class="mt-4 text-center text-lg text-gray-700 max-w-3xl mx-auto">True peace of mind comes from professional expertise. We partner with you as credentialed safety professionals dedicated to your family's well-being.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 text-center">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-5xl font-bold text-[#366E8A]">~10</p>
+                        <h4 class="mt-2 text-lg font-semibold text-[#003F5C]">Years of Frontline Medical Experience</h4>
+                        <p class="mt-2 text-gray-600">As a certified paramedic on hospital and flight teams, we know the real-world mechanisms of childhood injury.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-5xl font-bold text-[#366E8A] flex justify-center items-center space-x-1">
+                            <span>&#128104;</span><span>&#128103;</span><span>&#128102;</span><span>&#128102;</span><span>&#128102;</span>
+                        </div>
+                        <h4 class="mt-2 text-lg font-semibold text-[#003F5C]">A Parent's Perspective</h4>
+                        <p class="mt-2 text-gray-600">As a father of five, we design practical, effective solutions that work for real, busy families.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-5xl font-bold text-[#366E8A]">&#128220;</p>
+                        <h4 class="mt-2 text-lg font-semibold text-[#003F5C]">Professional & Insured</h4>
+                        <p class="mt-2 text-gray-600">A registered Oklahoma LLC with full General and Professional Liability insurance for your peace of mind.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-xl p-6">
+                <h3 class="text-2xl font-bold text-center text-[#003F5C]">A Paramedic's Assessment: Uncovering Hidden Hazards</h3>
+                <p class="mt-4 text-center text-lg text-gray-700 max-w-3xl mx-auto">Our audit goes deeper than standard checklists. This chart highlights some of the less-obvious, high-impact risks we identify from real-world experience, making your home truly safer.</p>
+                <div class="mt-8">
+                    <div class="chart-container">
+                        <canvas id="hazardsChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-xl p-6">
+                <h3 class="text-2xl font-bold text-center text-[#003F5C]">Our Simple, Professional Process</h3>
+                <p class="mt-4 text-center text-lg text-gray-700 max-w-3xl mx-auto">We've designed our service to be straightforward and stress-free, guiding you from assessment to a fully secured home.</p>
+                <div class="mt-8 flex flex-col md:flex-row justify-center items-center md:space-x-4 space-y-8 md:space-y-0">
+                    <div class="flex flex-col items-center text-center max-w-xs">
+                        <div class="w-24 h-24 bg-[#7CB5D3] rounded-full flex items-center justify-center text-4xl font-bold text-white">1</div>
+                        <h4 class="mt-4 text-xl font-semibold text-[#003F5C]">The Walkthrough</h4>
+                        <p class="mt-2 text-gray-600">A systematic, room-by-room tour to identify hazards and discuss them with you in real-time.</p>
+                    </div>
+                    <div class="text-4xl text-[#366E8A] transform rotate-90 md:rotate-0">&rarr;</div>
+                    <div class="flex flex-col items-center text-center max-w-xs">
+                        <div class="w-24 h-24 bg-[#366E8A] rounded-full flex items-center justify-center text-4xl font-bold text-white">2</div>
+                        <h4 class="mt-4 text-xl font-semibold text-[#003F5C]">The Report</h4>
+                        <p class="mt-2 text-gray-600">A detailed digital report with photos, prioritized risks, and actionable recommendations delivered within 48 hours.</p>
+                    </div>
+                    <div class="text-4xl text-[#366E8A] transform rotate-90 md:rotate-0">&rarr;</div>
+                    <div class="flex flex-col items-center text-center max-w-xs">
+                        <div class="w-24 h-24 bg-[#003F5C] rounded-full flex items-center justify-center text-4xl font-bold text-white">3</div>
+                        <h4 class="mt-4 text-xl font-semibold text-[#003F5C]">The Solution</h4>
+                        <p class="mt-2 text-gray-600">Professional installation of all recommended devices, from standard gates to custom solutions.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="bg-white rounded-lg shadow-xl p-6">
+                <h3 class="text-2xl font-bold text-center text-[#003F5C]">The Result: True Peace of Mind</h3>
+                 <p class="mt-4 text-center text-lg text-gray-700 max-w-3xl mx-auto">Our service is a partnership, combining professional expertise with a simple process to give you complete confidence in your home's safety.</p>
+                <div class="mt-8">
+                    <div class="chart-container">
+                        <canvas id="peaceOfMindChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="text-center py-8">
+                <h3 class="text-3xl font-bold text-[#003F5C]">Schedule Your Peace of Mind Today</h3>
+                <p class="mt-4 text-lg text-gray-700">Protecting your child is the most important job in the world. Let us help you do it with confidence.</p>
+                <div class="mt-6">
+                    <a href="tel:405-999-8448" class="inline-block bg-[#003F5C] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-[#366E8A] transition-colors">Call or Text: 405-999-8448</a>
+                </div>
+                <p class="mt-4 text-gray-600">Email: nrmacy1116@gmail.com | Visit: vitalsignssafetyokc.com</p>
+            </footer>
+
+        </div>
+    </main>
+
+    <script>
+        const wrapLabel = (label) => {
+            if (typeof label === 'string' && label.length > 16) {
+                const words = label.split(' ');
+                let lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).trim().length > 16 && currentLine.length > 0) {
+                        lines.push(currentLine);
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                }
+                if (currentLine.length > 0) {
+                    lines.push(currentLine);
+                }
+                return lines;
+            }
+            return label;
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const hazardsChartCtx = document.getElementById('hazardsChart').getContext('2d');
+        const hazardsLabels = [
+            'Furniture & TV Tip-Over Dangers', 
+            'Window Blind Cord Hazards', 
+            'Hidden Drowning & Water Risks', 
+            'Toxic Plants & Unsecured Chemicals', 
+            'Overlooked Choking Hazards'
+        ].map(wrapLabel);
+        
+        new Chart(hazardsChartCtx, {
+            type: 'bar',
+            data: {
+                labels: hazardsLabels,
+                datasets: [{
+                    label: 'Areas of Assessment',
+                    data: [10, 9, 8, 7, 6],
+                    backgroundColor: ['#003F5C', '#366E8A', '#7CB5D3', '#003F5C', '#366E8A'],
+                    borderColor: '#F2F2F2',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                maintainAspectRatio: false,
+                scales: {
+                    x: { beginAtZero: true, display: false },
+                    y: { ticks: { font: { size: 14, weight: '500' }, color: '#003F5C' } }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: () => 'A critical area our paramedic-led audit covers.'
+                        }
+                    }
+                }
+            }
+        });
+
+        const peaceOfMindChartCtx = document.getElementById('peaceOfMindChart').getContext('2d');
+        new Chart(peaceOfMindChartCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Paramedic Expertise', 'Professional Process', 'A Parent\'s Perspective'],
+                datasets: [{
+                    data: [33.3, 33.3, 33.4],
+                    backgroundColor: ['#003F5C', '#366E8A', '#7CB5D3'],
+                    hoverOffset: 4,
+                    borderColor: '#F2F2F2',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { font: { size: 14, weight: '500' }, color: '#003F5C' }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: (context) => ` A key component of our total safety solution.`
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
