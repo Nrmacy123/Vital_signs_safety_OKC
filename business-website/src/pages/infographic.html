@@ -25,10 +25,7 @@
 
     <main class="container mx-auto max-w-5xl p-4 sm:p-8">
         
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-[#003F5C]">Vital Signs Safety OKC</h1>
-            <h2 class="text-xl md:text-2xl text-[#366E8A] mt-2">Protecting what's most vital.</h2>
-        </header>
+            <div id="header"></div>
 
         <div class="space-y-12">
 
@@ -126,9 +123,9 @@
                 </div>
             </section>
             
-            <section class="bg-white rounded-lg shadow-xl p-6">
-                <h3 class="text-2xl font-bold text-center text-[#003F5C]">From Uncertainty to Confidence: The Vital Signs Transformation</h3>
-                <p class="mt-4 text-center text-lg text-gray-700 max-w-3xl mx-auto">Our service is designed to replace parental anxiety with professional assurance.</p>
+            <section class="bg-gray-50 rounded-lg shadow-xl p-6">
+                <h3 class="text-2xl font-bold text-center text-[#003F5C]">From Uncertainty to Confidence: The Vital Signs Mission</h3>
+                <p class="mt-4 text-center text-lg text-gray-800 max-w-3xl mx-auto">Our service is designed to empower parents with professional assurance.</p>
                 <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="bg-gray-100 rounded-lg p-6">
                         <h4 class="text-xl font-bold text-gray-600 text-center">Before Our Audit</h4>
@@ -151,17 +148,23 @@
                 </div>
             </section>
 
-            <footer class="text-center py-8">
-                <h3 class="text-3xl font-bold text-[#003F5C]">Schedule Your Peace of Mind Today</h3>
-                <p class="mt-4 text-lg text-gray-700">Protecting your child is the most important job in the world. Let us help you do it with confidence.</p>
-                <div class="mt-6">
-                    <a href="tel:405-999-8448" class="inline-block bg-[#003F5C] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-[#366E8A] transition-colors">Call or Text: 405-999-8448</a>
-                </div>
-                <p class="mt-4 text-gray-600">Email: nrmacy1116@gmail.com | Visit: vitalsignssafetyokc.com</p>
-            </footer>
+            <div id="footer"></div>
 
         </div>
     </main>
+
+    <script>
+    fetch('/components/footer.html')
+    .then(res => res.text())
+    .then(html => { document.getElementById('footer').innerHTML = html; });
+    </script>
+
+    <script>
+    fetch('/components/header.html')
+    .then(res => res.text())
+    .then(html => { document.getElementById('footer').innerHTML = html; });
+    </script>
+    
 
 </body>
 </html>
