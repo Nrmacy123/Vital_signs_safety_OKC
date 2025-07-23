@@ -1,0 +1,15 @@
+{
+  "name": "business-website",
+  "version": "1.0.0",
+  "description": "A website for my business showcasing services and providing contact information.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build process here'",
+    "test": "echo 'No tests specified'"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
