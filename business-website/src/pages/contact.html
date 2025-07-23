@@ -1,37 +1,66 @@
-Sure, here's the content for the file `/business-website/business-website/src/pages/contact.html`:
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="../assets/styles/main.css">
+    <title>Contact Us - Vital Signs Safety OKC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F2F2F2;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <!-- Include header component here -->
-    </header>
-    
-    <main>
-        <h1>Contact Us</h1>
-        <p>If you have any questions, feel free to reach out to us using the form below.</p>
-        <form action="#" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Send Message</button>
-        </form>
-    </main>
-    
-    <footer>
-        <!-- Include footer component here -->
-    </footer>
+<body class="text-gray-700">
+    <div class="container mx-auto max-w-4xl p-4 sm:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#003F5C]">Contact Us</h1>
+            <p class="text-xl md:text-2xl text-[#366E8A] mt-2">Let's take the next step toward a safer home for your family.</p>
+        </header>
+
+        <main>
+            <div class="bg-white rounded-lg shadow-xl p-8 max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-center text-[#003F5C]">Schedule Your Peace of Mind</h2>
+                <p class="mt-4 text-lg text-center text-gray-700">Ready to get started? The best way to begin is with a direct conversation. We're here to answer your questions, understand your needs, and schedule your comprehensive home safety audit.</p>
+                
+                <div class="mt-8 space-y-6">
+                    <div class="text-center">
+                        <h3 class="text-lg font-semibold text-gray-500 uppercase tracking-wider">Primary Contact</h3>
+                        <p class="text-2xl font-bold text-[#003F5C] mt-1">Call or Text</p>
+                        <a href="tel:405-999-8448" class="mt-2 inline-block bg-[#003F5C] text-white font-bold py-3 px-8 rounded-lg text-xl hover:bg-[#366E8A] transition-colors">
+                            405-999-8448
+                        </a>
+                    </div>
+
+                    <div class="text-center">
+                        <h3 class="text-lg font-semibold text-gray-500 uppercase tracking-wider">Secondary Contact</h3>
+                        <p class="text-2xl font-bold text-[#003F5C] mt-1">Email</p>
+                         <a href="mailto:nrmacy1116@gmail.com" class="mt-2 inline-block text-lg text-[#366E8A] hover:underline">
+                            nrmacy1116@gmail.com
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-center border-t border-gray-200 pt-6">
+                    <h3 class="text-xl font-bold text-[#003F5C]">What to Expect</h3>
+                    <p class="mt-2 text-gray-600">We'll typically respond within a few hours to schedule a brief introductory call. We look forward to helping you create a safer environment for your family.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="text-center mt-16 py-6 border-t border-[#C1E1F4]">
+            <p class="text-sm text-gray-600">© 2025 Vital Signs Safety OKC, L.L.C. | Serving the Greater Oklahoma City Area</p>
+            <a href="index.html" class="text-sm text-[#366E8A] hover:underline">Return to Homepage</a>
+        </footer>
+
+    </div>
 </body>
 </html>
