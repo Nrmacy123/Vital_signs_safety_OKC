@@ -5,132 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vital Signs Safety OKC - Paramedic-Led Home Childproofing</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #F2F2F2;
-        }
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-        }
-        .cta-card {
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-        .cta-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-        }
-    </style>
 </head>
 <body class="text-gray-700">
-    <div class="container mx-auto max-w-5xl p-4 sm:p-8">
-
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-[#003F5C]">Vital Signs Safety OKC</h1>
-            <p class="text-xl md:text-2xl text-[#366E8A] mt-2">A Paramedic-Led Approach to Childproofing Your Home.</p>
-
-            <div class="mt-6">
-                <a href="contact.html" class="inline-block bg-[#003F5C] text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-[#366E8A] transition-colors">
-                    Schedule Your Safety Assessment
-                </a>
-            </div>
-
-        </header>
+<div class="container mx-auto max-w-5xl p-4 sm:p-8">
+    <div id="header"></div>
+    <script>
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
 
         <main class="space-y-16">
-
-            <section class="bg-white rounded-lg shadow-xl p-8 text-center">
-                <h2 class="text-3xl font-bold text-[#003F5C]">Expert Guidance for Real Families</h2>
+            <!-- Hero Section -->
+            <section class="section-bg text-center">
+                <h2 class="text-3xl font-bold" style="color: var(--vs-blue-dark);">Expert Guidance for Real Families</h2>
                 <p class="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">As a paramedic and a father of five, I saw a critical gap between standard baby gates and the real-world hazards that cause childhood injuries. We bridge that gap with professional, practical safety solutions.</p>
+                
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 text-center">
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <p class="text-5xl font-bold text-[#366E8A]">🚑</p>
-                        <h4 class="mt-2 text-lg font-semibold text-[#003F5C]">Frontline Experience</h4>
+                    <div class="section-bg-accent p-4 rounded-lg">
+                        <p class="text-5xl font-bold icon-highlight">🚑</p>
+                        <h4 class="mt-2 text-lg font-semibold" style="color: var(--vs-blue-dark);">Frontline Experience</h4>
                         <p class="mt-2 text-gray-600">Nearly a decade of paramedic expertise means we know how injuries actually happen.</p>
                     </div>
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <div class="text-5xl font-bold text-[#366E8A] flex justify-center items-center space-x-1">
+                    <div class="section-bg-accent p-4 rounded-lg">
+                        <div class="text-5xl font-bold icon-highlight flex justify-center items-center space-x-1">
                             <span>&#128104;</span><span>&#128103;</span><span>&#128102;</span>
                         </div>
-                        <h4 class="mt-2 text-lg font-semibold text-[#003F5C]">A Parent's Perspective</h4>
+                        <h4 class="mt-2 text-lg font-semibold" style="color: var(--vs-blue-dark);">A Parent's Perspective</h4>
                         <p class="mt-2 text-gray-600">We design practical solutions that work for busy families because we are one.</p>
                     </div>
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <p class="text-5xl font-bold text-[#366E8A]">📋</p>
-                        <h4 class="mt-2 text-lg font-semibold text-[#003F5C]">Professional & Insured</h4>
+                    <div class="section-bg-accent p-4 rounded-lg">
+                        <p class="text-5xl font-bold icon-highlight">📋</p>
+                        <h4 class="mt-2 text-lg font-semibold" style="color: var(--vs-blue-dark);">Professional & Insured</h4>
                         <p class="mt-2 text-gray-600">A registered and fully insured Oklahoma L.L.C. for your complete peace of mind.</p>
                     </div>
                 </div>
             </section>
 
+            <!-- CTA Section -->
             <section>
-                <h2 class="text-3xl font-bold text-center text-[#003F5C] mb-8">Choose Your Path to a Safer Home</h2>
-                <div class="grid grid-cols-2 md:grid-cols-2 gap-8">
+                <h2 class="text-3xl font-bold text-center mb-8" style="color: var(--vs-blue-dark);">Choose Your Path to a Safer Home</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     
-                    <a href="infographic.html" class="cta-card bg-white rounded-lg shadow-lg p-8 block">
-                        <h3 class="text-2xl font-bold text-[#003F5C]">Why It Matters: Our Mission</h3>
+                    <a href="infographic.html" class="cta-card section-bg p-8 block">
+                        <h3 class="text-2xl font-bold" style="color: var(--vs-blue-dark);">Why It Matters: Our Mission</h3>
                         <p class="mt-3 text-gray-600">Understand the statistics and see the comprehensive, professional process we use to protect what's most vital.</p>
-                        <div class="mt-6 text-lg font-bold text-[#366E8A]">View Our Safety Infographic &rarr;</div>
+                        <div class="mt-6 text-lg font-bold text-accent">View Our Safety Infographic &rarr;</div>
                     </a>
 
-                    <a href="hazards.html" class="cta-card bg-white rounded-lg shadow-lg p-8 block">
-                        <h3 class="text-2xl font-bold text-[#003F5C]">What to Look For: Top 5 Risks</h3>
+                    <a href="hazards.html" class="cta-card section-bg p-8 block">
+                        <h3 class="text-2xl font-bold" style="color: var(--vs-blue-dark);">What to Look For: Top 5 Risks</h3>
                         <p class="mt-3 text-gray-600">Explore an interactive guide to the top 5 home hazards for infants, toddlers, and preschoolers, straight from a paramedic's experience.</p>
-                        <div class="mt-6 text-lg font-bold text-[#366E8A]">Explore the Interactive Hazard Guide &rarr;</div>
+                        <div class="mt-6 text-lg font-bold text-accent">Explore the Interactive Hazard Guide &rarr;</div>
                     </a>
 
-                    <a href="contact.html" class="cta-card bg-white rounded-lg shadow-lg p-8 block">
-                        <h3 class="text-2xl font-bold text-[#003F5C]">Contact Us</h3>
-                        <div class="mt-6 text-lg font-bold text-[#366E8A]">Phone or Text & Email &rarr;</div>
+                    <a href="contact.html" class="cta-card section-bg p-8 block">
+                        <h3 class="text-2xl font-bold" style="color: var(--vs-blue-dark);">Contact Us</h3>
+                        <p class="mt-3 text-gray-600">Ready to schedule your comprehensive safety assessment? Get in touch today.</p>
+                        <div class="mt-6 text-lg font-bold text-accent">Phone or Text & Email &rarr;</div>
                     </a>
 
-                    <a href="contact.html" class="cta-card bg-white rounded-lg shadow-lg p-8 block">
-                        <h3 class="text-2xl font-bold text-[#003F5C]">Our Story</h3>
-                        <div class="mt-6 text-lg font-bold text-[#366E8A]">A testomonial & Our Mission&rarr;</div>
+                    <a href="about.html" class="cta-card section-bg p-8 block">
+                        <h3 class="text-2xl font-bold" style="color: var(--vs-blue-dark);">Our Story</h3>
+                        <p class="mt-3 text-gray-600">Learn about our journey from emergency response to prevention, and read what families are saying.</p>
+                        <div class="mt-6 text-lg font-bold text-accent">Testimonials & Our Mission &rarr;</div>
                     </a>
 
                 </div>
             </section>
 
-            <section class="bg-white rounded-lg shadow-xl p-8">
-                <h2 class="text-3xl font-bold text-center text-[#003F5C] mb-8">Latest Safety Resources</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Featured/Latest Posts Preview -->
-                    <a href="resources/latest-post.html" class="group hover:no-underline">
-                        <div class="bg-gray-50 rounded-lg p-6 transition-all duration-300 hover:shadow-md">
-                            <p class="text-sm text-[#366E8A] mb-2">Latest Post</p>
-                            <h3 class="text-xl font-bold text-[#003F5C] mb-2">Title of Your Latest Post</h3>
-                            <p class="text-gray-600 text-sm">Brief preview of your latest safety article or resource...</p>
-                            <p class="mt-4 text-[#366E8A] group-hover:translate-x-2 transition-transform">Read More →</p>
-                        </div>
-                    </a>
-                    <!-- Add 2 more preview cards here -->
-                </div>
-    <div class="text-center mt-8">
-        <a href="resources.html" class="inline-block bg-[#003F5C] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-[#366E8A] transition-colors">
-            View All Resources
-        </a>
-    </div>
-</section>
-
         </main>
 
-        <footer class="text-center mt-16 py-6 border-t border-[#C1E1F4]">
-            <h3 class="text-2xl font-bold text-[#003F5C]">Schedule Your Peace of Mind Today</h3>
-            <div class="mt-4">
-                <a href="tel:405-999-8448" class="inline-block bg-[#003F5C] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-[#366E8A] transition-colors">Call or Text: 405-999-8448</a>
+        <!-- Consistent Footer -->
+        <footer class="text-center py-8 relative section-bg mt-12">
+            <div class="accent-line mx-auto w-24 mb-6"></div>
+            
+            <h3 class="text-3xl font-bold" style="color: var(--vs-blue-dark);">Schedule For Peace of Mind Today</h3>
+            <p class="mt-4 text-lg text-gray-700">Protecting your child is the most important job in the world. Let us help you do it with confidence.</p>
+            
+            <div class="mt-6">
+                <a href="tel:405-999-8448" class="btn-primary phone-number emergency-contact">Call or Text: 405-999-8448</a>
             </div>
-            <p class="mt-4 text-sm text-gray-600">Vital Signs Safety OKC, L.L.C. | nrmacy1116@gmail.com</p>
+
+            <!-- Navigation Links -->
+            <nav class="mt-8 mb-4">
+                <ul class="flex justify-center space-x-6" style="color: var(--vs-blue-mid);">
+                    <li><a href="/index.html" class="nav-link transition-colors">Home</a></li>
+                    <li><a href="/contact.html" class="nav-link transition-colors">Contact</a></li>
+                    <li><a href="/services.html" class="nav-link transition-colors">Services</a></li>
+                    <li><button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="nav-link transition-colors cursor-pointer">Return to Top ↑</button></li>
+                </ul>
+            </nav>
+
+            <div class="mt-6 space-y-2">
+                <p class="text-gray-600">
+                    <span class="text-accent font-semibold">Email:</span> 
+                    <a href="mailto:info@vitalsignssafetyokc.com" class="hover:opacity-75 transition-colors">info@vitalsignssafetyokc.com</a>
+                </p>
+                <p class="text-gray-600">
+                    <span class="text-accent font-semibold">Visit:</span> 
+                    <a href="https://vitalsignssafetyokc.com" class="hover:opacity-75 transition-colors">vitalsignssafetyokc.com</a>
+                </p>
+            </div>
+            
+            <div class="mt-8 pt-4 border-t border-gray-200">
+                <p class="text-sm text-gray-500">
+                    © 2025 Vital Signs Safety OKC LLC | Licensed & Insured | Serving the Oklahoma City Metro
+                </p>
+                <p class="text-xs text-gray-400 mt-1">
+                    <em>"Prevention is the best medicine"</em>
+                </p>
+            </div>
         </footer>
 
-        <script src="../assets/scripts/main.js">
-
-        </script>
+        <script src="main.js"></script>
 
     </div>
 </body>
 </html>
-`

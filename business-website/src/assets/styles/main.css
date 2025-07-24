@@ -1,138 +1,104 @@
-/* Brand Colors - Updated to Match Logo */
+/*-- Vital Signs Safety OKC - Brand Styles --*/
+
+/* Brand Colors - Derived from Logo */
 :root {
-    /* Primary Blue from Logo (darker blue elements) */
-    --vs-blue-dark: #2C3E50;
-    --vs-blue-mid: #34495E;
-    
-    /* Teal/Cyan from heartbeat line */
-    --vs-teal-primary: #1ABC9C;
-    --vs-teal-light: #48CAE4;
-    --vs-teal-xlight: #90E0EF;
-    
-    /* Green from logo elements */
-    --vs-green-primary: #95C93D;
-    --vs-green-light: #A8D446;
-    --vs-green-xlight: #C4E679;
-    
-    /* Background and neutrals */
-    --vs-bg: #F8FAFC;
-    --vs-white: #FFFFFF;
-    --vs-gray-light: #E2E8F0;
-    --vs-gray-medium: #64748B;
+    /* Primary Blues from Logo */
+    --vs-navy-main: #0D2A4C;      /* Stethoscope & Main Text */
+    --vs-blue-accent: #3A7CA5;   /* Lighter blue from roof */
+    --vs-navy-dark: #041C32;      /* A deeper navy for contrast */
+
+    /* Accent Green - Darker, more professional shade */
+    --vs-green-accent: #2E7D32;  /* Darker, professional green */
+
+    /* Neutrals & Backgrounds */
+    --vs-gray-dark: #343A40;      /* For body text */
+    --vs-gray-medium: #808080;    /* For subtitles and borders */
+    --vs-gray-light: #E2E8F0;     /* For subtle dividers */
+    --vs-bg-main: #F4F6F8;       /* Light gray page background */
+    --vs-white: #FFFFFF;         /* For cards and clean sections */
 }
 
-/* Font Families */
+/* Base & Typography */
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    background-color: var(--vs-bg);
-    color: #374151; /* Tailwind gray-700 */
+    background-color: var(--vs-bg-main);
+    color: var(--vs-gray-dark);
 }
 
 h1, h2, h3, h4 {
     font-family: 'Montserrat', Arial, sans-serif;
-    color: var(--vs-blue-dark);
+    color: var(--vs-navy-main);
 }
 
-/* Utility Classes */
+/*-- Components & Utilities --*/
+
+/* Clickable Cards (CTA) */
 .cta-card {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    border-left: 4px solid var(--vs-teal-primary);
+    border-left: 4px solid var(--vs-blue-accent);
 }
 .cta-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    border-left-color: var(--vs-green-primary);
+    border-left-color: var(--vs-green-accent); /* Green used as a small accent */
 }
 
 /* Buttons */
 .btn-primary {
-    background: linear-gradient(135deg, var(--vs-teal-primary) 0%, var(--vs-teal-light) 100%);
-    color: #fff;
+    background-color: var(--vs-navy-main);
+    color: var(--vs-white);
     font-weight: bold;
     border-radius: 0.5rem;
     padding: 0.75rem 2rem;
     transition: all 0.3s ease;
-    border: none;
+    border: 2px solid var(--vs-navy-main);
 }
 .btn-primary:hover {
-    background: linear-gradient(135deg, var(--vs-green-primary) 0%, var(--vs-green-light) 100%);
+    background-color: var(--vs-blue-accent); /* Hover now uses accent blue */
+    border-color: var(--vs-blue-accent);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(26, 188, 156, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.btn-secondary {
-    background-color: var(--vs-white);
-    color: var(--vs-blue-dark);
-    border: 2px solid var(--vs-teal-primary);
-    font-weight: bold;
-    border-radius: 0.5rem;
-    padding: 0.75rem 2rem;
-    transition: all 0.3s ease;
-}
-.btn-secondary:hover {
-    background-color: var(--vs-teal-primary);
-    color: var(--vs-white);
-}
-
-/* Section backgrounds */
+/* Section Styling */
 .section-bg {
     background-color: var(--vs-white);
     border-radius: 0.75rem;
     box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.05);
     padding: 2rem;
-    border-top: 3px solid var(--vs-teal-primary);
+    border-top: 4px solid var(--vs-blue-accent);
 }
 
 .section-bg-accent {
-    background: linear-gradient(135deg, var(--vs-teal-xlight) 0%, var(--vs-green-xlight) 100%);
+    background-color: #eef5ff; /* A very light, custom blue */
     border-radius: 0.75rem;
     padding: 2rem;
     border: 1px solid var(--vs-gray-light);
 }
 
-/* Accent elements */
+/* Accent Elements */
 .accent-line {
     height: 4px;
-    background: linear-gradient(90deg, var(--vs-teal-primary) 0%, var(--vs-green-primary) 100%);
+    background: linear-gradient(90deg, var(--vs-blue-accent) 0%, var(--vs-green-accent) 100%);
     border-radius: 2px;
     margin: 1rem 0;
 }
 
 .icon-highlight {
-    color: var(--vs-teal-primary);
+    color: var(--vs-navy-main);
 }
 
 .text-accent {
-    color: var(--vs-teal-primary);
+    color: var(--vs-blue-accent);
     font-weight: 600;
 }
 
 .text-secondary-accent {
-    color: var(--vs-green-primary);
+    color: var(--vs-green-accent); /* Green text is a perfect small accent */
     font-weight: 600;
 }
 
-/* Custom Loader */
-.loader {
-    border: 4px solid var(--vs-gray-light);
-    border-top: 4px solid var(--vs-teal-primary);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-}
-@keyframes spin {
-    0% { transform: rotate(0deg);}
-    100% { transform: rotate(360deg);}
-}
-
-/* Header/Navigation accents */
-.nav-link:hover {
-    color: var(--vs-teal-primary);
-    transition: color 0.2s ease;
-}
-
-/* Form elements */
+/* Form Elements */
 .form-input {
     border: 2px solid var(--vs-gray-light);
     border-radius: 0.5rem;
@@ -140,17 +106,20 @@ h1, h2, h3, h4 {
     transition: border-color 0.2s ease;
 }
 .form-input:focus {
-    border-color: var(--vs-teal-primary);
+    border-color: var(--vs-blue-accent);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.1);
+    box-shadow: 0 0 0 3px rgba(58, 124, 165, 0.15);
 }
 
-/* Responsive tweaks */
+/* Navigation */
+.nav-link:hover {
+    color: var(--vs-blue-accent);
+    transition: color 0.2s ease;
+}
+
+/* Responsive Tweaks */
 @media (max-width: 640px) {
-    .section-bg {
-        padding: 1rem;
-    }
-    .cta-card {
-        padding: 1rem;
+    .section-bg, .cta-card {
+        padding: 1.5rem;
     }
 }
