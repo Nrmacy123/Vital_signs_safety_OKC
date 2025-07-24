@@ -1,10 +1,24 @@
-/* Brand Colors */
+/* Brand Colors - Updated to Match Logo */
 :root {
-    --vs-blue-dark: #003F5C;
-    --vs-blue-mid: #366E8A;
-    --vs-blue-light: #7CB5D3;
-    --vs-blue-xlight: #C1E1F4;
-    --vs-bg: #F2F2F2;
+    /* Primary Blue from Logo (darker blue elements) */
+    --vs-blue-dark: #2C3E50;
+    --vs-blue-mid: #34495E;
+    
+    /* Teal/Cyan from heartbeat line */
+    --vs-teal-primary: #1ABC9C;
+    --vs-teal-light: #48CAE4;
+    --vs-teal-xlight: #90E0EF;
+    
+    /* Green from logo elements */
+    --vs-green-primary: #95C93D;
+    --vs-green-light: #A8D446;
+    --vs-green-xlight: #C4E679;
+    
+    /* Background and neutrals */
+    --vs-bg: #F8FAFC;
+    --vs-white: #FFFFFF;
+    --vs-gray-light: #E2E8F0;
+    --vs-gray-medium: #64748B;
 }
 
 /* Font Families */
@@ -22,37 +36,86 @@ h1, h2, h3, h4 {
 /* Utility Classes */
 .cta-card {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-left: 4px solid var(--vs-teal-primary);
 }
 .cta-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border-left-color: var(--vs-green-primary);
 }
 
 /* Buttons */
 .btn-primary {
-    background-color: var(--vs-blue-dark);
+    background: linear-gradient(135deg, var(--vs-teal-primary) 0%, var(--vs-teal-light) 100%);
     color: #fff;
     font-weight: bold;
     border-radius: 0.5rem;
     padding: 0.75rem 2rem;
-    transition: background 0.2s;
+    transition: all 0.3s ease;
+    border: none;
 }
 .btn-primary:hover {
-    background-color: var(--vs-blue-mid);
+    background: linear-gradient(135deg, var(--vs-green-primary) 0%, var(--vs-green-light) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 188, 156, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--vs-white);
+    color: var(--vs-blue-dark);
+    border: 2px solid var(--vs-teal-primary);
+    font-weight: bold;
+    border-radius: 0.5rem;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+    background-color: var(--vs-teal-primary);
+    color: var(--vs-white);
 }
 
 /* Section backgrounds */
 .section-bg {
-    background-color: #fff;
+    background-color: var(--vs-white);
     border-radius: 0.75rem;
     box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.05);
     padding: 2rem;
+    border-top: 3px solid var(--vs-teal-primary);
 }
 
-/* Custom Loader (if needed) */
+.section-bg-accent {
+    background: linear-gradient(135deg, var(--vs-teal-xlight) 0%, var(--vs-green-xlight) 100%);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    border: 1px solid var(--vs-gray-light);
+}
+
+/* Accent elements */
+.accent-line {
+    height: 4px;
+    background: linear-gradient(90deg, var(--vs-teal-primary) 0%, var(--vs-green-primary) 100%);
+    border-radius: 2px;
+    margin: 1rem 0;
+}
+
+.icon-highlight {
+    color: var(--vs-teal-primary);
+}
+
+.text-accent {
+    color: var(--vs-teal-primary);
+    font-weight: 600;
+}
+
+.text-secondary-accent {
+    color: var(--vs-green-primary);
+    font-weight: 600;
+}
+
+/* Custom Loader */
 .loader {
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid var(--vs-blue-dark);
+    border: 4px solid var(--vs-gray-light);
+    border-top: 4px solid var(--vs-teal-primary);
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -61,6 +124,25 @@ h1, h2, h3, h4 {
 @keyframes spin {
     0% { transform: rotate(0deg);}
     100% { transform: rotate(360deg);}
+}
+
+/* Header/Navigation accents */
+.nav-link:hover {
+    color: var(--vs-teal-primary);
+    transition: color 0.2s ease;
+}
+
+/* Form elements */
+.form-input {
+    border: 2px solid var(--vs-gray-light);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    transition: border-color 0.2s ease;
+}
+.form-input:focus {
+    border-color: var(--vs-teal-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.1);
 }
 
 /* Responsive tweaks */
