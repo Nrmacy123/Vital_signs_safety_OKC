@@ -87,12 +87,17 @@
 
         </main>
 
-        <footer class="text-center mt-12 py-6 border-t border-[#C1E1F4]">
-            <p class="font-bold text-[#003F5C]">Vital Signs Safety OKC, L.L.C.</p>
-            <p class="text-sm text-gray-600">Protecting what's most vital.</p>
-            <p class="text-sm text-gray-600 mt-2">This guide is for informational purposes. For a comprehensive, in-home assessment, contact us.</p>
-            <p class="text-sm font-semibold text-gray-800 mt-1">405-999-8448 | vitalsignssafetyokc.com</p>
-        </footer>
+        <div id="footer"></div>
+        <script>
+            fetch('../components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        </script>
+
+        <script src="main.js"></script>
 
     </div>
 
