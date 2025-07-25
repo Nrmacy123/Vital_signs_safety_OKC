@@ -2,44 +2,47 @@
 // Enhanced functionality for better user experience
 
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // 1. SMOOTH SCROLLING FOR NAVIGATION LINKS
+    // Makes clicking navigation links smoothly scroll to sections
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+// Function to load header and footer components
+// js/main.js
+document.addEventListener("DOMContentLoaded", function() {
 
     // Function to fetch and load an HTML component
     const loadComponent = (path, elementId) => {
-        const element = document.getElementById(elementId);
-        // Only fetch if the target element exists on the page
-        if (element) {
-            fetch(path)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Network response was not ok for ${path}`);
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    element.innerHTML = data;
-                })
-                .catch(error => console.error(`Error loading component into #${elementId}:`, error));
-        }
+        fetch(path)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(elementId).innerHTML = data;
+            })
+            .catch(error => {
+                console.error(`Error fetching component from ${path}:`, error);
+            });
     };
 
-    // Load header and footer using correct relative paths
-    loadComponent('../components/header.html', 'header');
-    loadComponent('../components/footer.html', 'footer');
+    // Load header and footer
+    loadComponent('../components/header.html', 'header'); // Loads into <div id="header">
+    loadComponent('../components/footer.html', 'footer'); // Loads into <div id="footer">
 
-    // 1. SMOOTH SCROLLING FOR NAVIGATION LINKS
-    // This needs to be delegated or re-run after components load to catch new links.
-    // For now, we assume they are present at load or we can re-run this logic.
-    document.body.addEventListener('click', function(e) {
-        if (e.target.matches('a[href^="#"]')) {
-            e.preventDefault();
-            const targetId = e.target.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-    });
+});
 
+    
     // 2. PHONE NUMBER CLICK-TO-CALL
     // Makes phone numbers clickable on mobile devices
     const phoneNumbers = document.querySelectorAll('.phone-number');
@@ -292,3 +295,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Vital Signs Safety OKC - Website loaded successfully');
 });
+
+// 11. DYNAMIC NAVIGATION BAR
+// Fetches and loads the navigation bar from a separate HTML file
+document.addEventListener("DOMContentLoaded", function() {
+    // Path to your navigation component
+    const navPath = '../components/navigation.html';
+
+    
+// GOOGLE ANALYTICS SETUP (if you decide to add it later)
+// function initGoogleAnalytics() {
+//     // Add your Google Analytics tracking code here
+//     // gtag('config', 'GA_TRACKING_ID');
+// }
+
+// FACEBOOK PIXEL SETUP (if you decide to add it later)  
+// function initFacebookPixel() {
+//     // Add your Facebook Pixel code here
+// }

@@ -13,14 +13,6 @@
 <body class="text-gray-700">
 <div class="container mx-auto max-w-5xl p-4 sm:p-8">
     <div id="header"></div>
-    <script>
-        fetch('../components/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading header:', error));
-    </script>
 
         <main class="space-y-16">
 
@@ -102,12 +94,10 @@
 
         </main>
 
-        <footer class="text-center mt-16 py-6 border-t border-[#C1E1F4] no-print">
-            <p class="text-sm text-gray-600">© 2025 Vital Signs Safety OKC, L.L.C. | Serving the Greater Oklahoma City Area</p>
-            <a href="index.html" class="text-sm text-[#366E8A] hover:underline">Return to Homepage</a>
-        </footer>
+        <div id="footer"></div>
 
     </div>
+    <script src="../assets/scripts/main.js" defer></script>
     <script>
         document.getElementById('print-button').addEventListener('click', function() {
             window.print();

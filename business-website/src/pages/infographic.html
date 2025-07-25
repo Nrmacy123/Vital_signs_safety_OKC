@@ -3,62 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vital Signs Safety OKC - A Paramedic's Perspective on Child Safety</title>
+    <title>Vital Signs Safety OKC - Paramedic-Led Home Childproofing</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-        }
-    </style>
 </head>
-<body class="bg-[#F2F2F2]">
+<body class="text-gray-800">
+<div class="container mx-auto max-w-5xl p-4 sm:p-8">
     <!-- Chosen Palette: Brilliant Blues (#003F5C, #366E8A, #7CB5D3, #C1E1F4) -->
     <!-- Application Structure Plan: The SPA is designed as a narrative journey for a concerned parent. It starts with a high-impact hook (the problem), introduces the unique solution (paramedic expertise), builds credibility with core value propositions, visualizes the tangible risks identified (the 'what'), explains the simple process (the 'how'), shows the emotional outcome (the transformation), and ends with a clear call to action. This thematic, single-page scroll structure is ideal for storytelling and easy consumption on any device. -->
     <!-- Visualization & Content Choices: 1. Key Statistic -> Goal: Inform -> Viz: Single Big Number (HTML/CSS) -> Justification: Immediately grabs attention and establishes the stakes. 2. Core Differentiators -> Goal: Organize -> Viz: 3-Column Layout with Unicode Icons -> Justification: Breaks down the 'why us' into three memorable, digestible pillars. 3. Hidden Hazards -> Goal: Compare/Organize -> Viz: 6-Card Grid with Icons (HTML/CSS) -> Justification: Visually breaks down the categories of risks covered, making the audit's comprehensive nature tangible. 4. Process -> Goal: Organize -> Viz: 3-Step Flow Diagram (HTML/CSS) -> Justification: Simplifies the client journey, making the service feel approachable. 5. Outcome/Benefit -> Goal: Compare -> Viz: Before & After List (HTML/CSS) -> Justification: Clearly shows the transformation from anxiety to confidence, selling the emotional benefit. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 
     <main class="container mx-auto max-w-5xl p-4 sm:p-8">
-        
-            <div id="header"></div>
+        <div id="header"></div>
 
         <div class="space-y-12">
 
             <section class="bg-white rounded-lg shadow-xl p-6 text-center">
-                <h3 class="text-2xl font-bold text-[#003F5C]"></h3>
+                <h3 class="text-2xl font-bold text-[var(--vs-green-alt)]"></h3>
                 <p class="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
                 <div class="mt-8 bg-[#C1E1F4] rounded-lg p-6 max-w-md mx-auto">
                     <p class="text-6xl font-bold text-[#003F5C]">Every 4 Seconds</p>
                     <p class="text-lg text-[#003F5C] mt-2">A child is treated for an injury in an emergency room. We believe in proactive prevention to keep your family safe at home.</p>
                     <p class="text-xs text-gray-600 mt-2">(Source: Centers for Disease Control and Prevention)</p>
-                </div>
-            </section>
-
-            <section class="bg-white rounded-lg shadow-xl p-6">
-                <h3 class="text-2xl font-bold text-center text-[#003F5C]">Our Commitment to Your Family's Safety</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 text-center">
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <p class="text-5xl font-bold text-[#366E8A]">~10</p>
-                        <h4 class="mt-2 text-lg font-semibold text-[#003F5C]">Years of Frontline Medical Experience</h4>
-                        <p class="mt-2 text-gray-600">As a certified paramedic on hospital and flight teams, we know the real-world mechanisms of childhood injury.</p>
-                    </div>
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <div class="text-5xl font-bold text-[#366E8A] flex justify-center items-center space-x-1">
-                            <span>&#128104;</span><span>&#128103;</span><span>&#128102;</span><span>&#128102;</span><span>&#128102;</span>
-                        </div>
-                        <h4 class="mt-2 text-lg font-semibold text-[#003F5C]">A Parent's Perspective</h4>
-                        <p class="mt-2 text-gray-600">As a father of five, we design practical, effective solutions that work for real, busy families.</p>
-                    </div>
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <p class="text-5xl font-bold text-[#366E8A]">&#128220;</p>
-                        <h4 class="mt-2 text-lg font-semibold text-[#003F5C]">Professional & Insured</h4>
-                        <p class="mt-2 text-gray-600">A registered Oklahoma LLC with full General and Professional Liability insurance for your peace of mind.</p>
-                    </div>
                 </div>
             </section>
 
@@ -148,23 +118,12 @@
                 </div>
             </section>
 
-            <div id="footer"></div>
 
+        
+            <div id="footer"></div>
         </div>
     </main>
-
-    <script>
-    fetch('/components/footer.html')
-    .then(res => res.text())
-    .then(html => { document.getElementById('footer').innerHTML = html; });
-    </script>
-
-    <script>
-    fetch('/components/header.html')
-    .then(res => res.text())
-    .then(html => { document.getElementById('footer').innerHTML = html; });
-    </script>
-    
-
+</div>
+<script src="../assets/scripts/main.js" defer></script>
 </body>
 </html>

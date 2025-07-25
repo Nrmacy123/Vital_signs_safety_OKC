@@ -1,48 +1,64 @@
 /*-- Vital Signs Safety OKC - Brand Styles --*/
 
 :root {
-    /* Primary Blues */
-    --vs-navy-main: #0c1578;      /* Stethoscope & Main Text */
-    --vs-blue-accent: #5656fa;   /* Lighter blue from roof */
-    --vs-navy-dark: #041C32;      /* A deeper navy for contrast */
-    --vs-blue-dark-accent: #2A3F8E; /* Darker accent blue for hover effects */
-    --vs-navy-alt: #1B2A75;         /* For main headings and footers */
-    --vs-blue-alt: #357ABD;         /* For links, icons, and secondary buttons */
+  /* -------------------------------------- */
+  /* PRIMARY BRAND COLORS          */
+  /* Derived directly from the logo.    */
+  /* -------------------------------------- */
 
-    /* Accent Green */
-    --vs-green-accent: #6BAF8E;  /* Cooler, professional green */
-    --vs-green-alt: #8DC63F;        /* For primary Call-to-Action (CTA) buttons */
-    --vs-bg-main-gradient: linear-gradient(to bottom, hsla(210, 60%, 96%, 0.829), hsl(196, 84%, 88%)); /* Gradient background */
-    --vs-bg-sky-top: #EAF2F8;
-    --vs-bg-light: #F4F6F8;
-    
-    /* Neutrals & Backgrounds */
-    --vs-gray-dark: #13293e;      /* For body text */
-    --vs-gray-medium: #6C7A89;    /* Cooler medium gray for subtitles and borders */
-    --vs-gray-light: #E2E8F0;     /* For subtle dividers */
-    --vs-bg-main: #c7d7e7;       /* Light gray page background */
-    --vs-bg-alt: #d8ebff;        /* Slightly darker gray for sections */
-    --vs-white: #FFFFFF;         /* For cards and clean sections */
+  /** --vs-primary-navy: Use for main headlines, footers, and dark UI elements. */
+  --vs-primary-navy: #263a5a;
 
-    /* --- Neutral Tones --- */
-    --vs-text-dark: #2c3e50;    /* For body paragraphs - easier to read than pure black */
-    --vs-gray-medium: #A7A9AC;  /* For borders, disabled states, or subtitles */
-    --vs-bg-light: #F4F6F8;     /* Light gray for the main page background (<body>) */
-    --vs-bg-white: #FFFFFF;     /* For content cards and modals to make them "pop" */
+  /** --vs-accent-blue: Your primary Call-to-Action (CTA) color. Use for buttons, links, and icons. */
+  --vs-accent-blue: #0abfdb;
 
+  /** --vs-accent-green: Your secondary accent. Use for testimonials, success messages, or supporting graphics. */
+  --vs-accent-green: #84a07c;
+
+
+  /* -------------------------------------- */
+  /* NEUTRAL SYSTEM             */
+  /* For text, backgrounds, and borders.  */
+  /* -------------------------------------- */
+
+  /** --vs-neutral-text: For all main body paragraphs. Easier to read than pure black. */
+  --vs-neutral-text: #4a4a4a;
+
+  /** --vs-neutral-subtle: For subtitles, borders, and disabled states. */
+  --vs-neutral-subtle: #A7A9AC;
+
+  /** --vs-neutral-bg-light: For the main page background. Clean and professional. */
+  --vs-neutral-bg-light: #F4F6F8; /* A very light gray is often softer than pure white */
+
+  /** --vs-neutral-bg-white: For content cards, modals, or sections you want to "pop" off the background. */
+  --vs-neutral-bg-white: #FFFFFF;
+
+
+  /* -------------------------------------- */
+  /* (Optional) UTILITY COLORS        */
+  /* For alerts and user feedback.        */
+  /* -------------------------------------- */
+
+  /** --vs-utility-success: For "Message Sent!" confirmations. */
+  --vs-utility-success: #28a745;
+
+  /** --vs-utility-warning: For non-critical alerts. */
+  --vs-utility-warning: #ffc107;
+
+  /** --vs-utility-error: For form validation errors. */
+  --vs-utility-error: #dc3545;
 }
 
 /* Base & Typography */
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    background-color: var(--vs-bg-light); /* Fallback */
-    background-image: linear-gradient(40, var(--vs-bg-sky-top), var(--vs-bg-light));
-    color: var(--vs-gray-dark);
+    background-color: var(--vs-neutral-bg-white); 
+    color: var(--vs-neutral-text);
 }
 
 h1, h2, h3, h4 {
     font-family: 'Montserrat', Arial, sans-serif;
-    color: var(--vs-navy-main);
+    color: var(--vs-primary-navy);
 }
 
 /*-- Components & Utilities --*/
@@ -50,58 +66,60 @@ h1, h2, h3, h4 {
 /* Clickable Cards (CTA) */
 .cta-card {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    border-left: 4px solid var(--vs-blue-accent);
+    border-left: 4px solid var(--vs-accent-blue);
 }
 
 .cta-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    border-left-color: var(--vs-green-accent); /* Green used as a small accent */
-    border-top-color: var(--vs-green-accent); /* Green used as a small accent */
+    border-left-color: var(--vs-accent-green); /* Green used as a small accent */
+    border-top-color: var(--vs-accent-green); /* Green used as a small accent */
 }
 
 /* Buttons */
 .btn-primary {
-    background-color: var(--vs-navy-main);
-    color: var(--vs-white);
+    background-color: var(--vs-primary-navy);
+    color: var(--vs-neutral-bg-light);
     font-weight: bold;
     border-radius: 0.5rem;
     padding: 0.75rem 2rem;
     transition: all 0.3s ease;
-    border: 2px solid var(--vs-navy-main);
+    border: 2px solid var(--vs-neutral-subtle);
 }
+
 .btn-primary:hover {
-    background-color: var(--vs-blue-accent); /* Hover now uses accent blue */
-    border-color: var(--vs-blue-accent);
+    background-color: var(--vs-accent-green); /* Hover now uses accent blue */
+    border-color: var(--vs-neutral-subtle);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Section Styling */
 .section-bg {
-    background-color: var(--vs-white);
+    background-color: var(--vs-neutral-bg-light);
     border-radius: 0.75rem;
     box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.05);
     padding: 2rem;
-    border-top: 4px solid var(--vs-blue-accent);
+    border-top: 4px solid var(--vs-accent-blue);
 }
 
 .section-bg-accent {
-    background: radial-gradient(45deg, var(--vs-white), var(--vs-bg-main));
+    background: var(--vs-neutral-bg-white);
     border-radius: 0.75rem;
     padding: 2rem;
-    border: 1px solid var(--vs-gray-light);
+    border: 1px solid var(--vs-accent-green);
 }
 
 /* Accent Elements */
 .accent-line {
     height: 4px;
     width: 48rem;
-    background: linear-gradient(45deg, var(--vs-blue-accent), var(--vs-green-accent));
+    background: linear-gradient(50deg, var(--vs-accent-blue), var(--vs-accent-green));
     border-radius: 9999px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.158);
-    margin: 1rem auto;
-    animation: shimmer 2s infinite linear; /* Add shimmer effect */
+    margin: 1rem auto; 
+    background-size: 200% 200%; /* Make the gradient larger for animation */
+    animation: shimmer 5s infinite linear; /* Add shimmer effect */
 }
 
 @keyframes shimmer {
@@ -114,36 +132,41 @@ h1, h2, h3, h4 {
 }
 
 .icon-highlight {
-    color: var(--vs-navy-main);
+    color: var(--vs-accent-green);
 }
 
 .text-accent {
-    color: var(--vs-blue-accent);
+    color: var(--vs-accent-blue);
     font-weight: 600;
 }
 
 .text-secondary-accent {
-    color: var(--vs-green-accent); /* Green text is a perfect small accent */
+    color: var(--vs-accent-green); /* Green text is a perfect small accent */
     font-weight: 600;
 }
 
 /* Form Elements */
 .form-input {
-    border: 2px solid var(--vs-gray-light);
+    border: 2px solid var(--vs-neutral-subtle);
     border-radius: 0.5rem;
     padding: 0.75rem;
     transition: border-color 0.2s ease;
 }
 .form-input:focus {
-    border-color: var(--vs-blue-accent);
+    border-color: var(--vs-accent-blue);
     outline: none;
     box-shadow: 0 0 0 3px rgba(58, 124, 165, 0.15);
 }
 
 /* Navigation */
-.nav-link:hover {
-    color: var(--vs-blue-accent);
+.nav-link {
+    color: var(--vs-neutral-text);
+    text-decoration: none;
     transition: color 0.2s ease;
+    padding: 0.5rem;
+}
+.nav-link:hover {
+    color: var(--vs-accent-green);
 }
 
 /* Responsive Tweaks */
@@ -153,6 +176,30 @@ h1, h2, h3, h4 {
     }
 }
 
-nav {
-    margin-bottom: 20px; /* Adjust the value as needed */
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 250px;
+    width: 100%;
+    max-width: 250px;
+}
+.nav-btn {
+    transition: all 0.3s ease;
+}
+.nav-btn.active {
+    background-color: var(--vs-neutral-text) !important;
+    color: var(--vs-accent-green) !important;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #003F5C;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

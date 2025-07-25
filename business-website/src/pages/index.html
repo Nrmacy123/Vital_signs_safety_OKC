@@ -13,24 +13,15 @@
 <body class="text-gray-800">
 <div class="container mx-auto max-w-5xl p-4 sm:p-8">
     <div id="header"></div>
-    <script>
-        fetch('../components/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading header:', error));
-    </script>
-
         <main class="space-y-16">
             <!-- Hero Section -->
             <section class="section-bg text-center">
-                <h2 class="text-3xl font-bold" style="color: var(--vs-navy);">Expert Guidance for Real Families</h2>
+                <h2 class="text-3xl font-bold">Expert Guidance for Real Families</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 text-center">
                     <div class="section-bg-accent p-4 rounded-lg">
                         <p class="text-5xl font-bold icon-highlight">🚑</p>
-                        <h4 class="mt-2 text-lg font-semibold" style="color: var(--vs-text-dark);">Frontline Experience</h4>
+                        <h4 class="mt-2 text-lg font-semibold" style="color: var(--vs-text-gray);">Frontline Experience</h4>
                         <p class="mt-2 text-gray-800">~10 years treating children with preventable injuries</p>
                     </div>
                     <div class="section-bg-accent p-4 rounded-lg">
@@ -42,7 +33,7 @@
                     </div>
                     <div class="section-bg-accent p-4 rounded-lg">
                         <p class="text-5xl font-bold icon-highlight">📋</p>
-                        <h4 class="mt-2 text-lg font-semibold" style="color: var(--vs-blue-dark);">Professional & Insured</h4>
+                        <h4 class="mt-2 text-lg font-semibold" style="color: var(--vs-neutral-text);">Professional & Insured</h4>
                         <p class="mt-2 text-gray-800">Registered, local, fully insured, peace of mind.</p>
                     </div>
                 </div>
@@ -53,29 +44,29 @@
 
             <!-- CTA Section -->
             <section>
-                <h2 class="text-3xl font-bold text-center mb-8" style="color: var(--vs-blue-dark);">Choose Your Path to a Safer Home</h2>
+                <h2 class="text-3xl font-bold text-center mb-8" style="color: var(--vs-primary-navy);">Choose Your Path to a Safer Home</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     
                     <a href="infographic.html" class="cta-card section-bg p-8 block">
-                        <h3 class="text-2xl font-bold" style="color: var(--vs-blue-dark);">Why It Matters: Our Mission</h3>
+                        <h3 class="text-2xl font-bold" style="color: var(--vs-primary-navy);">Why It Matters: Our Mission</h3>
                         <p class="mt-3 text-gray-800">Understand the statistics and see the comprehensive, professional process we use to protect what's most vital.</p>
                         <div class="mt-6 text-lg font-bold text-accent">View Our Safety Infographic &rarr;</div>
                     </a>
 
                     <a href="hazards.html" class="cta-card section-bg p-8 block">
-                        <h3 class="text-2xl font-bold" style="color: var(--vs-blue-dark);">What to Look For: Top 5 Risks</h3>
+                        <h3 class="text-2xl font-bold" style="color: var(--vs-primary-navy);">What to Look For: Top 5 Risks</h3>
                         <p class="mt-3 text-gray-800">Explore an interactive guide to the top 5 home hazards for infants, toddlers, and preschoolers, straight from a paramedic's experience.</p>
                         <div class="mt-6 text-lg font-bold text-accent">Explore the Interactive Hazard Guide &rarr;</div>
                     </a>
 
                     <a href="contact.html" class="cta-card section-bg p-8 block">
-                        <h3 class="text-2xl font-bold" style="color: var(--vs-blue-dark);">Contact Us</h3>
+                        <h3 class="text-2xl font-bold" style="color: var(--vs-primary-navy);">Contact Us</h3>
                         <p class="mt-3 text-gray-800">Ready to schedule your comprehensive safety assessment? Get in touch today.</p>
                         <div class="mt-6 text-lg font-bold text-accent">Phone or Text & Email &rarr;</div>
                     </a>
 
                     <a href="about.html" class="cta-card section-bg p-8 block">
-                        <h3 class="text-2xl font-bold" style="color: var(--vs-blue-dark);">Our Story</h3>
+                        <h3 class="text-2xl font-bold" style="color: var(--vs-primary-navy);">Our Story</h3>
                         <p class="mt-3 text-gray-800">Learn about our journey from emergency response to prevention, and read what families are saying.</p>
                         <div class="mt-6 text-lg font-bold text-accent">Testimonials & Our Mission &rarr;</div>
                     </a>
@@ -86,17 +77,7 @@
         </main>
 
         <div id="footer"></div>
-        <script>
-            fetch('../components/footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading footer:', error));
-        </script>
-
-        <script src="main.js"></script>
-
-    </div>
+</div>
+<script src="../assets/scripts/main.js" defer></script>
 </body>
 </html>
