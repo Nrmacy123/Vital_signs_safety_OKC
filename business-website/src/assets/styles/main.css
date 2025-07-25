@@ -152,3 +152,7 @@ h1, h2, h3, h4 {
         padding: 1.5rem;
     }
 }
+
+nav {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
