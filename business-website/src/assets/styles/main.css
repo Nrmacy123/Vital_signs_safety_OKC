@@ -1,31 +1,42 @@
 /*-- Vital Signs Safety OKC - Brand Styles --*/
 
-/* Brand Colors - Derived from Logo */
 :root {
-    /* Primary Blues from Logo */
+    /* Primary Blues */
     --vs-navy-main: #0c1578;      /* Stethoscope & Main Text */
     --vs-blue-accent: #5656fa;   /* Lighter blue from roof */
     --vs-navy-dark: #041C32;      /* A deeper navy for contrast */
+    --vs-blue-dark-accent: #2A3F8E; /* Darker accent blue for hover effects */
+    --vs-navy-alt: #1B2A75;         /* For main headings and footers */
+    --vs-blue-alt: #357ABD;         /* For links, icons, and secondary buttons */
 
-    /* Accent Green - Darker, more professional shade */
-    --vs-green-accent: #7bbd94;  /* Darker, professional green */
-
+    /* Accent Green */
+    --vs-green-accent: #6BAF8E;  /* Cooler, professional green */
+    --vs-green-alt: #8DC63F;        /* For primary Call-to-Action (CTA) buttons */
+    --vs-bg-main-gradient: linear-gradient(to bottom, hsla(210, 60%, 96%, 0.829), hsl(196, 84%, 88%)); /* Gradient background */
+    --vs-bg-sky-top: #EAF2F8;
+    --vs-bg-light: #F4F6F8;
+    
     /* Neutrals & Backgrounds */
     --vs-gray-dark: #13293e;      /* For body text */
-    --vs-gray-medium: #808080;    /* For subtitles and borders */
+    --vs-gray-medium: #6C7A89;    /* Cooler medium gray for subtitles and borders */
     --vs-gray-light: #E2E8F0;     /* For subtle dividers */
     --vs-bg-main: #c7d7e7;       /* Light gray page background */
+    --vs-bg-alt: #d8ebff;        /* Slightly darker gray for sections */
     --vs-white: #FFFFFF;         /* For cards and clean sections */
 
-    /* Gradient background */
-    --vs-bg-main-gradient: linear-gradient(70deg, hsla(210, 60%, 96%, 0.829), hsl(196, 84%, 88%));
+    /* --- Neutral Tones --- */
+    --vs-text-dark: #2c3e50;    /* For body paragraphs - easier to read than pure black */
+    --vs-gray-medium: #A7A9AC;  /* For borders, disabled states, or subtitles */
+    --vs-bg-light: #F4F6F8;     /* Light gray for the main page background (<body>) */
+    --vs-bg-white: #FFFFFF;     /* For content cards and modals to make them "pop" */
+
 }
 
 /* Base & Typography */
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    background-color: var(--vs-bg-main); /* Fallback */
-    background: var(--vs-bg-main-gradient); /* Gradient */
+    background-color: var(--vs-bg-light); /* Fallback */
+    background-image: linear-gradient(40, var(--vs-bg-sky-top), var(--vs-bg-light));
     color: var(--vs-gray-dark);
 }
 
@@ -41,6 +52,7 @@ h1, h2, h3, h4 {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     border-left: 4px solid var(--vs-blue-accent);
 }
+
 .cta-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);

@@ -273,6 +273,13 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Vital Signs Safety OKC - Website loaded successfully');
 });
 
+// 11. DYNAMIC NAVIGATION BAR
+// Fetches and loads the navigation bar from a separate HTML file
+document.addEventListener("DOMContentLoaded", function() {
+    // Path to your navigation component
+    const navPath = '../components/navigation.html';
+
+    
 // GOOGLE ANALYTICS SETUP (if you decide to add it later)
 // function initGoogleAnalytics() {
 //     // Add your Google Analytics tracking code here
