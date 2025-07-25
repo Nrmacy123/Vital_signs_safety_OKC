@@ -22,7 +22,7 @@
   /* -------------------------------------- */
 
   /** --vs-neutral-text: For all main body paragraphs. Easier to read than pure black. */
-  --vs-neutral-text: #4a4a4a;
+  --vs-neutral-text: #3d3d3d;
 
   /** --vs-neutral-subtle: For subtitles, borders, and disabled states. */
   --vs-neutral-subtle: #A7A9AC;
@@ -65,15 +65,15 @@ h1, h2, h3, h4 {
 
 /* Clickable Cards (CTA) */
 .cta-card {
+    border-top: 10px solid var(--vs-accent-blue);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    border-left: 4px solid var(--vs-accent-blue);
+
 }
 
 .cta-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    border-left-color: var(--vs-accent-green); /* Green used as a small accent */
-    border-top-color: var(--vs-accent-green); /* Green used as a small accent */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px 3px rgb(0 0 0 / 0.1), 0 4px 6px 4px rgb(0 0 0 / 0.1);
+    border-top: 15px solid var(--vs-accent-green); /* Green used as a small accent */
 }
 
 /* Buttons */
@@ -84,7 +84,7 @@ h1, h2, h3, h4 {
     border-radius: 0.5rem;
     padding: 0.75rem 2rem;
     transition: all 0.3s ease;
-    border: 2px solid var(--vs-neutral-subtle);
+    border-top: 2px solid var(--vs-neutral-subtle);
 }
 
 .btn-primary:hover {
@@ -97,26 +97,28 @@ h1, h2, h3, h4 {
 /* Section Styling */
 .section-bg {
     background-color: var(--vs-neutral-bg-light);
-    border-radius: 0.75rem;
+    border-radius: 1.5rem;
     box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.05);
-    padding: 2rem;
-    border-top: 4px solid var(--vs-accent-blue);
+    padding: 1rem;
+    border-top: 10px solid var(--vs-accent-blue);
 }
 
 .section-bg-accent {
     background: var(--vs-neutral-bg-white);
-    border-radius: 0.75rem;
-    padding: 2rem;
-    border: 1px solid var(--vs-accent-green);
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.05);
+    padding: 1rem;
+    border-top: 15px solid var(--vs-accent-green);
 }
 
 /* Accent Elements */
 .accent-line {
-    height: 4px;
-    width: 48rem;
-    background: linear-gradient(50deg, var(--vs-accent-blue), var(--vs-accent-green));
-    border-radius: 9999px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.158);
+    height: 3px;
+    width: 90%;
+    max-width: 48rem;
+    background: linear-gradient(40deg, var(--vs-accent-blue), var(--vs-accent-green));
+    border-radius: 9000px;
+    box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.158);
     margin: 1rem auto; 
     background-size: 200% 200%; /* Make the gradient larger for animation */
     animation: shimmer 5s infinite linear; /* Add shimmer effect */
@@ -137,7 +139,7 @@ h1, h2, h3, h4 {
 
 .text-accent {
     color: var(--vs-accent-blue);
-    font-weight: 600;
+    font-weight: 300;
 }
 
 .text-secondary-accent {
@@ -160,7 +162,7 @@ h1, h2, h3, h4 {
 
 /* Navigation */
 .nav-link {
-    color: var(--vs-neutral-text);
+    color: var(--vs-primary-navy);
     text-decoration: none;
     transition: color 0.2s ease;
     padding: 0.5rem;
@@ -172,7 +174,7 @@ h1, h2, h3, h4 {
 /* Responsive Tweaks */
 @media (max-width: 640px) {
     .section-bg, .cta-card {
-        padding: 1.5rem;
+        padding: 1rem;
     }
 }
 
@@ -202,4 +204,31 @@ h1, h2, h3, h4 {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* Notification System */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    color: var(--vs-neutral-bg-white);
+    font-weight: bold;
+    z-index: 1000;
+    transform: translateX(120%); /* Start off-screen */
+    transition: transform 0.4s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.notification.show {
+    transform: translateX(0);
+}
+.notification-success {
+    background-color: var(--vs-utility-success);
+}
+.notification-error {
+    background-color: var(--vs-utility-error);
+}
+.notification-info {
+    background-color: var(--vs-accent-blue);
 }

@@ -41,14 +41,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 2. PHONE NUMBER CLICK-TO-CALL
-    // Makes phone numbers clickable on mobile devices
-    const phoneNumbers = document.querySelectorAll('.phone-number');
-    phoneNumbers.forEach(phone => {
-        phone.style.cursor = 'pointer';
-        phone.addEventListener('click', function() {
-            const number = this.textContent.replace(/\D/g, ''); // Remove non-digits
+    // Makes phone numbers clickable. Uses event delegation to work on dynamically loaded content.
+    document.body.addEventListener('click', function(e) {
+        if (e.target.matches('.phone-number')) {
+            e.target.style.cursor = 'pointer';
+            const number = e.target.textContent.replace(/\D/g, ''); // Remove non-digits
             window.location.href = `tel:${number}`;
-        });
+        }
     });
 
     // 3. CONTACT FORM ENHANCEMENT
@@ -57,17 +56,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             // Basic form validation
             const requiredFields = this.querySelectorAll('[required]');
             let isValid = true;
             
             requiredFields.forEach(field => {
                 if (!field.value.trim()) {
-                    field.style.borderColor = '#ef4444'; // Red border for errors
+                    field.style.borderColor = 'var(--vs-utility-error)';
+
                     isValid = false;
                 } else {
-                    field.style.borderColor = 'var(--vs-teal-primary)'; // Green border for valid
+                    field.style.borderColor = 'var(--vs-accent-green)';
                 }
             });
 
@@ -187,18 +187,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // 7. EMERGENCY CONTACT HIGHLIGHT
     // Makes contact info stand out when clicked
     const emergencyContact = document.querySelector('.emergency-contact');
-    if (emergencyContact) {
-        emergencyContact.addEventListener('click', function() {
-            this.style.background = 'var(--vs-teal-xlight)';
-            this.style.transform = 'scale(1.05)';
-            
+    document.body.addEventListener('click', function(e) {
+        if (e.target.matches('.emergency-contact')) {
+            const originalBg = e.target.style.backgroundColor;
+            const originalColor = e.target.style.color;
+            e.target.style.backgroundColor = 'var(--vs-accent-blue)';
+            e.target.style.color = 'var(--vs-neutral-bg-white)';
+            e.target.style.transform = 'scale(1.05)';
             setTimeout(() => {
-                this.style.background = '';
-                this.style.transform = '';
+                e.target.style.backgroundColor = originalBg;
+                e.target.style.color = originalColor;
+                e.target.style.transform = '';
             }, 1000);
-        });
-    }
-
+        }
+    });
     // 8. SERVICE AREA CHECK
     // Simple zip code checker for service area
     function initServiceAreaCheck() {
@@ -215,11 +217,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const zip = zipInput.value.trim();
             
             if (serviceZips.includes(zip)) {
-                resultDiv.innerHTML = '<span style="color: var(--vs-green-primary);">✓ Yes! We serve your area. Call today to schedule.</span>';
+                resultDiv.innerHTML = `<span style="color: var(--vs-utility-success);">✓ Yes! We serve your area. Call today to schedule.</span>`;
             } else if (zip.length === 5) {
-                resultDiv.innerHTML = '<span style="color: var(--vs-gray-medium);">We may serve your area. Please call to confirm: 405-999-8448</span>';
+                resultDiv.innerHTML = `<span style="color: var(--vs-neutral-subtle);">We may serve your area. Please call to confirm: 405-999-8448</span>`;
             } else {
-                resultDiv.innerHTML = '<span style="color: #ef4444;">Please enter a valid 5-digit zip code.</span>';
+                resultDiv.innerHTML = `<span style="color: var(--vs-utility-error);">Please enter a valid 5-digit zip code.</span>`;
             }
         });
         
@@ -241,41 +243,22 @@ document.addEventListener('DOMContentLoaded', function() {
         if (existing) existing.remove();
         
         const notification = document.createElement('div');
-        notification.className = `notification notification-${type}`;
-        notification.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 1rem 1.5rem;
-            border-radius: 0.5rem;
-            color: white;
-            font-weight: bold;
-            z-index: 1000;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-        `;
-        
-        // Set background color based on type
-        const colors = {
-            success: 'var(--vs-green-primary)',
-            error: '#ef4444',
-            info: 'var(--vs-teal-primary)'
-        };
-        notification.style.backgroundColor = colors[type] || colors.info;
-        
         notification.textContent = message;
         document.body.appendChild(notification);
         
         // Animate in
         setTimeout(() => {
-            notification.style.transform = 'translateX(0)';
+            notification.classList.add('show');
         }, 100);
         
         // Auto remove after 4 seconds
         setTimeout(() => {
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => notification.remove(), 300);
-        }, 4000);
+            notification.classList.remove('show');
+            // Remove the element after the transition ends
+            notification.addEventListener('transitionend', () => {
+                notification.remove();
+            });
+            },  4000);
     }
     
     // Make showNotification globally available
