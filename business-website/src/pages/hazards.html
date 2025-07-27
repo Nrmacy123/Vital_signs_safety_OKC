@@ -3,231 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vital Signs Safety OKC - Top 5 Home Hazards by Age</title>
+    <title>Common Hazards - Vital Signs Safety OKC</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body class="text-gray-700">
-    <div class="container mx-auto max-w-4xl p-4 sm:p-8">
+<body>
+<div class="container mx-auto max-w-5xl p-4 sm:p-8">
 
-        <div id="header"></div>
+    <div id="header"></div>
 
-        <nav class="flex justify-center space-x-2 sm:space-x-4 mb-8 p-2 bg-[#C1E1F4] rounded-full">
-            <button id="btn-infant" class="nav-btn active text-sm sm:text-base font-semibold text-[#003F5C] bg-white/50 py-2 px-4 rounded-full" data-age="infant">0–12 Months</button>
-            <button id="btn-toddler" class="nav-btn text-sm sm:text-base font-semibold text-[#003F5C] bg-white/50 py-2 px-4 rounded-full" data-age="toddler">1–3 Years</button>
-            <button id="btn-preschooler" class="nav-btn text-sm sm:text-base font-semibold text-[#003F5C] bg-white/50 py-2 px-4 rounded-full" data-age="preschooler">3–5 Years</button>
-        </nav>
+    <main class="space-y-12">
 
-        <main id="content-area">
-            <section id="age-group-overview" class="mb-8 p-6 bg-white rounded-lg shadow-md">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-                    <div class="md:col-span-2">
-                        <h2 id="overview-title" class="text-2xl font-bold text-[#003F5C]">The Dependent Infant (0–12 Months)</h2>
-                        <p id="overview-text" class="mt-2 text-gray-700">During the first year, an infant's safety depends entirely on the environment created by caregivers. Lacking mobility, the most severe hazards are often silent and related to their immediate surroundings, especially their sleep space.</p>
+        <section class="section-bg text-center p-8">
+            <h1 class="text-4xl font-bold text-[var(--vs-primary-navy)]">A Paramedic's Guide to Hidden Home Hazards</h1>
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-[var(--vs-neutral-text)]">Our experience in the field gives us a unique perspective on child safety. We see beyond the obvious to identify risks that many overlook. Here are some of the key areas we focus on during our audit.</p>
+        </section>
+
+        <section class="section-bg-accent p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div class="hazard-card">
+                    <div class="hazard-title-container">
+                        <div class="text-4xl icon-highlight">&#128715;</div>
+                        <h3 class="hazard-title">Mechanical Hazards</h3>
                     </div>
-                    <div class="text-center">
-                        <h3 id="chart-title" class="text-lg font-semibold text-gray-800">Leading Cause of Fatal Injury</h3>
-                        <div class="chart-container">
-                            <canvas id="threatChart"></canvas>
-                        </div>
+                    <div class="hazard-content">
+                        <p><strong>Examples:</strong> Unsecured furniture (dressers, bookshelves), top-heavy TVs, dangling window blind cords, appliance tip-overs.</p>
+                        <p class="perspective"><strong>Paramedic's Perspective:</strong> These are silent risks. A child's natural instinct to climb can turn a piece of furniture into a deadly hazard in seconds. We check every single piece of furniture and television for proper anchoring.</p>
                     </div>
                 </div>
-            </section>
-            
-            <div id="hazards-container" class="space-y-6">
-            </div>
 
-            <div class="mt-6 text-center"> 
-                <a href="contact.html" class="inline-block bg-[#003F5C] text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-[#366E8A] transition-colors">
-                    Schedule Your Safety Assessment
-                </a>
-            </div>
+                <div class="hazard-card">
+                    <div class="hazard-title-container">
+                        <div class="text-4xl icon-highlight">&#128167;</div>
+                        <h3 class="hazard-title">Water Hazards</h3>
+                    </div>
+                    <div class="hazard-content">
+                        <p><strong>Examples:</strong> Unsecured toilets, accessible buckets, pet water bowls, bathtub access, water heater temperature set too high.</p>
+                        <p class="perspective"><strong>Paramedic's Perspective:</strong> A child can drown in as little as one inch of water. It happens incredibly fast. We also check hot water heaters, as scald burns are a common and devastating injury for children.</p>
+                    </div>
+                </div>
 
-        </main>
+                <div class="hazard-card">
+                    <div class="hazard-title-container">
+                        <div class="text-4xl icon-highlight">&#9888;</div>
+                        <h3 class="hazard-title">Electrical & Fire</h3>
+                    </div>
+                    <div class="hazard-content">
+                        <p><strong>Examples:</strong> Uncovered outlets, overloaded power strips, frayed cords, unmaintained smoke/CO detectors, accessible lighters/matches.</p>
+                        <p class="perspective"><strong>Paramedic's Perspective:</strong> Beyond outlet covers, we look at the entire electrical system from a child's point of view. We also verify the placement and function of every smoke and carbon monoxide detector—they are your first line of defense.</p>
+                    </div>
+                </div>
 
-        <div id="footer"></div>
-        
-    </div>
-    <script src="assets/scripts/main.js" defer></script>
-    </div>
+                <div class="hazard-card">
+                    <div class="hazard-title-container">
+                        <div class="text-4xl icon-highlight">&#9762;</div>
+                        <h3 class="hazard-title">Chemical & Poison</h3>
+                    </div>
+                    <div class="hazard-content">
+                        <p><strong>Examples:</strong> Cleaning supplies under sinks, unsecured medications, laundry pods, certain houseplants, automotive fluids in garages.</p>
+                        <p class="perspective"><strong>Paramedic's Perspective:</strong> We know what kids are drawn to—brightly colored pods and bottles. We assess storage of all chemicals, not just the obvious ones, and check for potentially toxic houseplants that parents may not be aware of.</p>
+                    </div>
+                </div>
 
-    <script>
-        let currentAgeGroup = 'infant';
+                <div class="hazard-card">
+                    <div class="hazard-title-container">
+                        <div class="text-4xl icon-highlight">&#129521;</div>
+                        <h3 class="hazard-title">Choking & Suffocation</h3>
+                    </div>
+                    <div class="hazard-content">
+                        <p><strong>Examples:</strong> Small toy parts, button batteries, loose magnets, food cut to the wrong size/shape, plastic bags, crib bedding.</p>
+                        <p class="perspective"><strong>Paramedic's Perspective:</strong> We use the toilet paper roll rule as a guide, but our audit goes further. We look for less obvious risks like button batteries, which can cause severe internal burns, and discuss safe sleep environments to prevent suffocation.</p>
+                    </div>
+                </div>
 
-        const hazardData = {
-            infant: {
-                title: "The Dependent Infant (0–12 Months)",
-                description: "During the first year, an infant's safety depends entirely on the environment created by caregivers. Lacking mobility, the most severe hazards are often silent and related to their immediate surroundings, especially their sleep space.",
-                chartData: {
-                    labels: ['Suffocation', 'Other Injuries'], data: [819, 1200], colors: ['#003F5C', '#7CB5D3'], title: 'Suffocation'
-                },
-                hazards: [
-                    { rank: 1, icon: '🛌', title: 'Suffocation & Strangulation', description: 'The leading cause of fatal injury for infants, accounting for nearly 40% of injury deaths. Primarily due to unsafe sleep environments (soft bedding, co-sleeping) and strangulation from cords.' },
-                    { rank: 2, icon: '📉', title: 'Falls', description: 'The leading cause of non-fatal injury. Infants have no protective reflexes, making falls from changing tables, beds, or while being carried on stairs especially dangerous.' },
-                    { rank: 3, icon: '🔥', title: 'Burns', description: 'Infant skin is thinner than an adult\'s and burns more easily. Scalds from hot tap water (above 120°F) and spilled beverages are the most common cause.' },
-                    { rank: 4, icon: '😮', title: 'Choking', description: 'A high fatality risk due to an infant\'s instinct to explore with their mouth. Two-thirds of all pediatric choking deaths occur in infants, often from small toy parts or food.' },
-                    { rank: 5, icon: '🛁', title: 'Drowning', description: 'Can occur in as little as one inch of water, with the bathtub being the most common location. Constant, within-arm\'s-reach supervision is the only effective prevention.' }
-                ]
-            },
-            toddler: {
-                title: "The Mobile Toddler (1–3 Years)",
-                description: "Newfound mobility (walking, climbing) combined with a lack of risk awareness makes this a period of high danger. The toddler becomes an active explorer, testing the safety of their environment.",
-                chartData: {
-                    labels: ['Drowning', 'Other Injuries'], data: [1000, 1500], colors: ['#003F5C', '#7CB5D3'], title: 'Drowning'
-                },
-                hazards: [
-                    { rank: 1, icon: '🌊', title: 'Drowning', description: 'The #1 cause of fatal injury for this age group, above car crashes. Residential swimming pools are the most common site, often due to brief lapses in supervision.' },
-                    { rank: 2, icon: '📉', title: 'Falls', description: 'The leading cause of non-fatal injury. Severe falls occur from stairs, windows, and unsecured furniture (tip-overs), which can be fatal.' },
-                    { rank: 3, icon: '💊', title: 'Poisoning', description: 'This is the highest-risk period for poisoning in a person\'s life. Toddlers open cabinets and taste everything, making cleaners, medications, and button batteries extreme hazards.' },
-                    { rank: 4, icon: '🔥', title: 'Burns', description: 'Toddlers can now reach stovetops and pull on pot handles or appliance cords, leading to devastating scalds from hot liquids and foods.' },
-                    { rank: 5, icon: '🌭', title: 'Choking', description: 'Remains a leading cause of death. Toddlers lack molars for proper grinding and are easily distracted while eating. High-risk foods include hot dogs, grapes, and nuts.' }
-                ]
-            },
-            preschooler: {
-                title: "The Curious Preschooler (3–5 Years)",
-                description: "Physical abilities are advanced, but the understanding of consequences is not. This stage is characterized by independent risk-taking and mimicking adult behaviors, creating new, complex hazards.",
-                chartData: {
-                    labels: ['Falls', 'Other Injuries'], data: [2500, 2000], colors: ['#003F5C', '#7CB5D3'], title: 'Falls'
-                },
-                hazards: [
-                    { rank: 1, icon: '📉', title: 'Falls', description: 'Remain the #1 cause of non-fatal injury. As preschoolers climb higher and run faster, falls from playground equipment, windows, and furniture result in more severe injuries.' },
-                    { rank: 2, icon: '🌊', title: 'Drowning', description: 'Still the leading cause of fatal injury for ages 1-4. Basic swimming lessons do not make a child "drown-proof." Layers of protection around pools are still critical.' },
-                    { rank: 3, icon: '🔥', title: 'Burns & Fire', description: 'Curiosity can lead to fire play with matches and lighters. For children over five, flame burns surpass scalds as the leading cause of burn injury, and the behavior starts here.' },
-                    { rank: 4, icon: '💊', title: 'Poisoning', description: 'The risk remains high as preschoolers become better at defeating child-resistant caps and accessing medications or cleaners in less-secure locations like a purse or visitor\'s bag.' },
-                    { rank: 5, icon: '✂️', title: 'Cuts & Struck-by Injuries', description: 'A high volume of ER visits result from collisions with furniture and gaining access to sharp "adult" tools like knives and scissors.' }
-                ]
-            }
-        };
-
-        let threatChart;
-
-        const createHazardCard = (hazard) => `
-            <div class="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
-                <div class="text-4xl">${hazard.icon}</div>
-                <div>
-                    <h4 class="text-xl font-bold text-[#003F5C]">${hazard.rank}. ${hazard.title}</h4>
-                    <p class="mt-1 text-gray-600">${hazard.description}</p>
+                <div class="hazard-card">
+                    <div class="hazard-title-container">
+                        <div class="text-4xl icon-highlight">&#128738;</div>
+                        <h3 class="hazard-title">Structural & Access</h3>
+                    </div>
+                    <div class="hazard-content">
+                        <p><strong>Examples:</strong> Gaps in stair railings, unsafe deck balusters, unrestricted access to pools or exterior doors, windows that open too wide.</p>
+                        <p class="perspective"><strong>Paramedic's Perspective:</strong> A fall from height is a significant mechanism of injury. We measure every gap to ensure it's safe for the smallest child and assess all points of entry/exit to prevent wandering and falls.</p>
+                    </div>
                 </div>
             </div>
-        `;
+        </section>
 
-        const updateContent = (ageGroup) => {
-            currentAgeGroup = ageGroup;
-            const data = hazardData[ageGroup];
-            document.getElementById('overview-title').textContent = data.title;
-            document.getElementById('overview-text').textContent = data.description;
-            document.getElementById('hazards-container').innerHTML = data.hazards.map(createHazardCard).join('');
-            updateChart(data.chartData);
-            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(`btn-${ageGroup}`).classList.add('active');
-        };
+        <section class="cta-card text-center">
+            <h3 class="text-3xl font-bold">An Ounce of Prevention is Worth a Pound of Cure.</h3>
+            <p class="mt-4 text-lg max-w-2xl mx-auto">Our audit provides a clear roadmap to a safer home. Let's work together to protect your family.</p>
+            <div class="mt-6">
+                <a href="contact.html" class="btn-primary">Schedule Your Home Audit</a>
+            </div>
+        </section>
 
-        const tooltipTitleCallback = (tooltipItems) => {
-            const item = tooltipItems[0];
-            let label = item.chart.data.labels[item.dataIndex];
-            if (Array.isArray(label)) return label.join(' ');
-            return label;
-        };
+    </main>
 
-        const initChart = () => {
-            const ctx = document.getElementById('threatChart').getContext('2d');
-            threatChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: { labels: [], datasets: [{ data: [], backgroundColor: [], borderColor: '#F2F2F2', borderWidth: 4, hoverOffset: 4 }] },
-                options: {
-                    responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { display: false }, tooltip: { callbacks: { title: tooltipTitleCallback, label: (c) => c.label ? ` ${c.label}` : '' } } }
-                }
-            });
-        };
+    <div id="footer"></div>
 
-        const updateChart = (chartData) => {
-            threatChart.data.labels = chartData.labels;
-            threatChart.data.datasets[0].data = chartData.data;
-            threatChart.data.datasets[0].backgroundColor = chartData.colors;
-            const titleEl = document.getElementById('chart-title');
-            if (chartData.title === 'Suffocation' || chartData.title === 'Drowning') {
-                titleEl.textContent = `Leading Cause of Fatal Injury: ${chartData.title}`;
-            } else {
-                titleEl.textContent = `Leading Cause of Non-Fatal Injury: ${chartData.title}`;
-            }
-            threatChart.update();
-        };
-
-        const handleScenarioGeneration = async () => {
-            const input = document.getElementById('scenario-input');
-            const location = input.value.trim();
-            if (!location) {
-                alert('Please enter a household area.');
-                return;
-            }
-
-            const loader = document.getElementById('scenario-loader');
-            const resultDiv = document.getElementById('scenario-result');
-            const generateBtn = document.getElementById('generate-scenario-btn');
-
-            loader.style.display = 'flex';
-            resultDiv.style.display = 'none';
-            generateBtn.disabled = true;
-            generateBtn.textContent = 'Generating...';
-            
-            const ageMap = {
-                infant: "0-12 months old",
-                toddler: "1-3 years old",
-                preschooler: "3-5 years old"
-            };
-            const ageText = ageMap[currentAgeGroup];
-
-            const prompt = `You are a child safety expert with a paramedic background. Based on the top risks for a child who is ${ageText}, describe a realistic, detailed safety hazard scenario that could happen in a typical family's ${location}. In the first paragraph, describe the scenario. In the second paragraph, explain the hidden dangers from a paramedic's perspective. In the third paragraph, provide a clear, actionable prevention tip. Keep the tone reassuring and expert. Format the response with HTML paragraphs.`;
-            
-            try {
-                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-                const payload = { contents: chatHistory };
-                const apiKey = "";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                
-                if (!response.ok) {
-                    throw new Error(`API request failed with status ${response.status}`);
-                }
-
-                const result = await response.json();
-                
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    const text = result.candidates[0].content.parts[0].text;
-                    resultDiv.innerHTML = text;
-                } else {
-                    resultDiv.innerHTML = "<p>Sorry, I couldn't generate a scenario right now. Please try again.</p>";
-                }
-            } catch (error) {
-                console.error("Error calling Gemini API:", error);
-                resultDiv.innerHTML = `<p>An error occurred: ${error.message}. Please try again later.</p>`;
-            } finally {
-                loader.style.display = 'none';
-                resultDiv.style.display = 'block';
-                generateBtn.disabled = false;
-                generateBtn.textContent = 'Generate Scenario';
-                input.value = '';
-            }
-        };
-
-        document.addEventListener('DOMContentLoaded', () => {
-            initChart();
-            updateContent('infant');
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => updateContent(e.target.dataset.age));
-            });
-            document.getElementById('generate-scenario-btn').addEventListener('click', handleScenarioGeneration);
-        });
-    </script>
+</div>
+<script src="assets/scripts/main.js" defer></script>
 </body>
 </html>

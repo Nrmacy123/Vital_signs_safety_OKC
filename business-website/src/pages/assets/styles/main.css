@@ -1,79 +1,116 @@
-/*-- Vital Signs Safety OKC - Brand Styles --*/
+/* A simple and effective CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p, ul, ol, li, figure, figcaption {
+  margin: 0;
+  padding: 0;
+}
 
 :root {
   /* -------------------------------------- */
   /* PRIMARY BRAND COLORS          */
-  /* Derived directly from the logo.    */
   /* -------------------------------------- */
-
   /** --vs-primary-navy: Use for main headlines, footers, and dark UI elements. */
   --vs-primary-navy: #263a5a;
-
   /** --vs-accent-blue: Your primary Call-to-Action (CTA) color. Use for buttons, links, and icons. */
   --vs-accent-blue: #0abfdb;
-
   /** --vs-accent-green: Your secondary accent. Use for testimonials, success messages, or supporting graphics. */
   --vs-accent-green: #84a07c;
-
-
   /* -------------------------------------- */
   /* NEUTRAL SYSTEM             */
   /* For text, backgrounds, and borders.  */
   /* -------------------------------------- */
-
   /** --vs-neutral-text: For all main body paragraphs. Easier to read than pure black. */
   --vs-neutral-text: #3d3d3d;
-
   /** --vs-neutral-subtle: For subtitles, borders, and disabled states. */
   --vs-neutral-subtle: #A7A9AC;
-
   /** --vs-neutral-bg-light: For main content sections. Clean and professional. */
   --vs-neutral-bg-light: #F4F6F8; /* A very light gray is often softer than pure white */
-
   /** --vs-neutral-bg-white: For content cards, modals, or sections you want to "pop" off the background. */
   --vs-neutral-bg-white: #FFFFFF;
-
-
+  --vs-dark-bg-gradient: linear-gradient(200deg, var(--vs-neutral-bg-light), var(--vs-neutral-bg-white)); /* A gradient for dark backgrounds, can be used in sections or cards */
   /* -------------------------------------- */
-  /* (Optional) UTILITY COLORS        */
   /* For alerts and user feedback.        */
   /* -------------------------------------- */
-
   /** --vs-utility-success: For "Message Sent!" confirmations. */
   --vs-utility-success: #28a745;
-
   /** --vs-utility-warning: For non-critical alerts. */
   --vs-utility-warning: #ffc107;
-
   /** --vs-utility-error: For form validation errors. */
   --vs-utility-error: #dc3545;
 }
-
+/* -------------------------------------- */
 /* Base & Typography */
+/* -------------------------------------- */
+/* Font Styles */
 body {
     font-family: 'Roboto', Arial, sans-serif;
     background-color: var(--vs-neutral-bg-white); 
-    color: var(--vs-neutral-text);
+    color: var(--vs-primary-navy);
+    font-size: 1rem;
 }
-
-h1, h2, h3, h4 {
-    font-family: 'Montserrat', Arial, sans-serif;
+h1{
+    font-family: 'Roboto', Arial, sans-serif;
+    color: var(--vs-primary-navy);
+    font-size: clamp(1.75rem, 1.25rem + 2vw, 3rem);
+    font-weight: 600;
+}
+h2 {
+    font-family: "lato", Arial, sans-serif;
+    font-size: clamp(1.5rem, 1.3rem + 1.5vw, 2.25rem);
+    font-weight: 600;
     color: var(--vs-primary-navy);
 }
-
-/*-- Components & Utilities --*/
-
+h3 {
+    font-family: "lato", Arial, sans-serif;
+    font-size: clamp(1.2rem, 1.0rem + 1vw, 1.5rem);
+    font-weight: 600;
+}
+h4 {
+    font-family: "lato", Arial, sans-serif;
+    font-size: 1.125rem; /* A static 18px */
+    font-weight: 600;
+    color: var(--vs-neutral-text);
+}
+/* -------------------------------------- */
+/* Sections */
+/* -------------------------------------- */
+.section-bg {
+    background-color: var(--vs-neutral-bg-light);
+    border-radius: 1.5rem;    
+    box-shadow: 4px 2px 8px 4px rgb(0 0 0 / 0.05);
+    padding: 1rem;
+    border-top: 15px solid var(--vs-accent-blue);
+    text-align: center;
+    text-justify: auto;
+}
+.section-bg-accent {
+    background: var(--vs-neutral-bg-white);
+    border-radius: 3rem;
+    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.05);
+    padding: 1rem;
+    border-top: 15px solid var(--vs-accent-green);
+    text-align: center;
+    text-justify: auto;
+}
+/* -------------------------------------- */
+/* Components & Utilities */
+/* -------------------------------------- */
 /* Clickable Cards (CTA) */
 .cta-card {
     border-top: 10px solid var(--vs-accent-blue);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-
-}
-
-.cta-card:hover {
+    border-radius: 2rem;
+/*-----Hover Effect-----*/
+    &:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 15px 3px rgb(0 0 0 / 0.1), 0 4px 6px 4px rgb(0 0 0 / 0.1);
-    border-top: 15px solid var(--vs-accent-green); /* Green used as a small accent */
+    border-top: 15px solid var(--vs-accent-blue); /* Green used as a small accent */
+    }
 }
 
 /* Buttons */
@@ -85,30 +122,13 @@ h1, h2, h3, h4 {
     padding: 0.75rem 2rem;
     transition: all 0.3s ease;
     border-top: 2px solid var(--vs-neutral-subtle);
-}
-
-.btn-primary:hover {
-    background-color: var(--vs-accent-blue); /* Hover now uses accent blue */
+    
+    &:hover {
+    background-color: var(--vs-accent-blue); 
     border-color: var(--vs-neutral-subtle);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Section Styling */
-.section-bg {
-    background-color: var(--vs-neutral-bg-light);
-    border-radius: 1.5rem;
-    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.05);
-    padding: 1rem;
-    border-top: 10px solid var(--vs-accent-blue);
-}
-
-.section-bg-accent {
-    background: var(--vs-neutral-bg-white);
-    border-radius: 1.5rem;
-    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.05);
-    padding: 1rem;
-    border-top: 15px solid var(--vs-accent-green);
+    }
 }
 
 /* Accent Elements */
@@ -135,16 +155,7 @@ h1, h2, h3, h4 {
 
 .icon-highlight {
     color: var(--vs-accent-green);
-}
-
-.text-accent {
-    color: var(--vs-accent-blue);
-    font-weight: 300;
-}
-
-.text-secondary-accent {
-    color: var(--vs-accent-green); /* Green text is a perfect small accent */
-    font-weight: 600;
+    box-shadow:rgba(44, 155, 34, 0.55) ;
 }
 
 /* Form Elements */
@@ -154,6 +165,7 @@ h1, h2, h3, h4 {
     padding: 0.75rem;
     transition: border-color 0.2s ease;
 }
+
 .form-input:focus {
     border-color: var(--vs-accent-blue);
     outline: none;
@@ -163,12 +175,13 @@ h1, h2, h3, h4 {
 /* Navigation */
 .nav-link {
     color: var(--vs-primary-navy);
-    text-decoration: none;
     transition: color 0.2s ease;
     padding: 0.5rem;
-}
-.nav-link:hover {
+
+    &:hover {
     color: var(--vs-accent-green);
+    text-decoration: underline;
+    }
 }
 
 /* Responsive Tweaks */
@@ -187,11 +200,12 @@ h1, h2, h3, h4 {
 }
 .nav-btn {
     transition: all 0.3s ease;
-}
-.nav-btn.active {
-    background-color: var(--vs-neutral-text) !important;
+    
+    &:active {
+    background-color: var(--vs-primary-navy) !important;
     color: var(--vs-accent-green) !important;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
 }
 .loader {
     border: 4px solid var(--vs-neutral-bg-light); /* Use a brand neutral for the track */
@@ -231,4 +245,118 @@ h1, h2, h3, h4 {
 }
 .notification-info {
     background-color: var(--vs-accent-blue);
+}
+
+/* General Card Styles (for web view) */
+.flash-card {
+    background-color: var(--vs-neutral-bg-white);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    height: 100%; /* Ensures cards in the same row are the same height */
+}
+
+.card-title {
+    font-size: clamp(1.75rem, 1.25rem + 2vw, 2.8rem);
+    font-family: 'Roboto', Arial, sans-serif;
+    text-align: center;
+    font-weight: 500;
+    color: var(--vs-primary-navy);
+}
+
+.card-content {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.card-content ul {
+    list-style-position: inside;
+    list-style-type: disc;
+}
+
+.btn-secondary {
+    background-color: var(--vs-neutral-bg-white);
+    color: var(--vs-primary-navy);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 2px solid var(--vs-accent-blue);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--vs-accent-blue);
+    color: var(--vs-neutral-bg-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Redefine your variables for dark mode */
+    --vs-primary-navy: #E0E6F1; /* A light, soft blue for text */
+    --vs-accent-blue: #14d9f5;
+    --vs-accent-green: #9ECC94;
+
+    --vs-neutral-text: #c1c1c1;
+    --vs-neutral-subtle: #747679;
+    --vs-neutral-bg-light: #2D3748; /* Darker background */
+    --vs-neutral-bg-white: #1A202C; /* Main dark background */
+    /* You can also adjust utility colors if needed */
+  }
+  /* Invert box shadows for dark mode */
+  .cta-card {
+    box-shadow: 0 10px 15px 3px rgb(0 0 0 / 0.2), 0 4px 6px 4px rgb(0 0 0 / 0.2);
+    border-top: 15px solid var(--vs-accent-blue);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  .section-bg {
+    background: var(--vs-dark-bg-gradient);
+  }
+  .cta-card:hover {
+    box-shadow: 0 10px 15px 3px rgba(194, 186, 186, 0.288), 0 4px 6px 4px rgba(255, 255, 255, 0.269);
+    }
+  #header-logo {
+    /* Turns the logo black, then inverts it to white */
+    filter:  invert(1) hue-rotate(160deg) contrast(1.3) brightness(2);
+  }
+  /* --- Forms --- */
+  /* --- Secondary Button --- */
+  .btn-secondary {
+  background-color: transparent;
+  color: var(--vs-accent-blue);
+  border: 2px solid var(--vs-accent-blue);
+  }
+
+  .btn-secondary:hover {
+  background-color: var(--vs-accent-blue);
+  color: #1A202C; /* Dark background color for text on hover */
+  }
+.accent-line {
+    box-shadow: 4px 2px 4px rgba(191, 225, 233, 0.4);
+  }
+  
+  .icon-highlight {
+    color: var(--vs-accent-green);
+  }
+  
+  .notification {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+
+@media (max-width: 1024px){
+    .section-bg, .cta-card {
+        padding: 1rem;
+    }
+    .card-title {
+        font-size: clamp(1.5rem, 1.25rem + 1vw, 2.5rem);
+    }
+    .card-content {
+        font-size: 0.9rem;
+    }
 }
