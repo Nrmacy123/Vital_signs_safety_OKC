@@ -184,13 +184,6 @@ h4 {
     }
 }
 
-/* Responsive Tweaks */
-@media (max-width: 640px) {
-    .section-bg, .cta-card {
-        padding: 1rem;
-    }
-}
-
 .chart-container {
     position: relative;
     margin: auto;
@@ -199,14 +192,22 @@ h4 {
     max-width: 250px;
 }
 .nav-btn {
+    background-color: var(--vs-primary-navy);
+    color: var(--vs-neutral-bg-light);
+    font-weight: bold;
+    border-radius: 0.5rem;
+    padding: 0.75rem 2rem;
     transition: all 0.3s ease;
+    border-top: 2px solid var(--vs-neutral-subtle);
     
-    &:active {
-    background-color: var(--vs-primary-navy) !important;
-    color: var(--vs-accent-green) !important;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    &:hover {
+    background-color: var(--vs-accent-blue); 
+    border-color: var(--vs-neutral-subtle);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 }
+
 .loader {
     border: 4px solid var(--vs-neutral-bg-light); /* Use a brand neutral for the track */
     border-top: 4px solid var(--vs-primary-navy); /* Use brand navy for the spinner */
@@ -325,11 +326,7 @@ h4 {
   }
   /* --- Forms --- */
   /* --- Secondary Button --- */
-  .btn-secondary {
-  background-color: transparent;
-  color: var(--vs-accent-blue);
-  border: 2px solid var(--vs-accent-blue);
-  }
+
 
   .btn-secondary:hover {
   background-color: var(--vs-accent-blue);
@@ -348,6 +345,17 @@ h4 {
   }
 }
 
+/* Responsive Tweaks */
+@media (max-width: 640px) {
+    .section-bg, .cta-card {
+        padding: 1rem;
+    }
+    .nav-btn {
+        display: block;      /* Make it a block-level element */
+        width: 100%;         /* Make it take the full width of its container */
+        text-align: center;
+    }
+}
 
 @media (max-width: 1024px){
     .section-bg, .cta-card {
